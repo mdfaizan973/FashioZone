@@ -1,5 +1,6 @@
 import React from "react";
 import "./Styles/Homes.css";
+import HomeCar1 from "./Carousal/HomeCar1";
 export default function Home() {
   return (
     <div>
@@ -9,6 +10,7 @@ export default function Home() {
           alt="banner"
         />
       </div>
+      <HomeCar1 />
     </div>
   );
 }

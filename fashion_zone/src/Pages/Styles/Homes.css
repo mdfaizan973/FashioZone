@@ -1,6 +1,6 @@
 .banner_img {
   width: 90%;
-  height: 50vh !important;
+  height: 100%;
   margin: 5px auto !important;
   border-radius: 5px;
   padding: 10px;
@@ -10,6 +10,7 @@
   width: 100%;
   object-fit: cover;
   cursor: pointer;
+  height: 60vh !important;
 }
 .banner_img img:hover {
   opacity: 0.9;
