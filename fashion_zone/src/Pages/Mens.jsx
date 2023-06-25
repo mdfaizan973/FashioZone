@@ -80,11 +80,26 @@ export default function Mens() {
         <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
       <div id="maincontainer">
-        <div id="pdoducts">
-          {prod.map((ele, i) => (
-            <ProductsCard key={i} data={ele} />
-          ))}
-        </div>
+        {prod.length ? (
+          <div id="pdoducts">
+            {prod.map((ele, i) => (
+              <ProductsCard key={i} data={ele} />
+            ))}
+          </div>
+        ) : (
+          <div
+            style={{
+              width: "90%",
+              display: "flex",
+              margin: "auto",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src="https://i.gifer.com/HrMe.gif" />
+            <h1 style={{ fontSize: "2.5rem" }}>No Data Found..</h1>
+          </div>
+        )}
       </div>
       <div class="pagination">
         {output.map((ele, i) => (
