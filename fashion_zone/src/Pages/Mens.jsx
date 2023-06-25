@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Styles/Mens.css";
 import { Link as RouterLink } from "react-router-dom";
+import axios from "axios";
 export default function Mens() {
+  const [prod, setProd] = useState([]);
   const products = [
     {
       name: "Product 1",
@@ -31,10 +33,24 @@ export default function Mens() {
         "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/j/5/c/m-mennevypenalnew-dark-culture-original-imagktwhc4nzs8qu.jpeg?q=70",
     },
   ];
+  // http://localhost:8888/mens_data
+
+  const getData = () => {
+    axios
+      .get("http://localhost:8888/mens_data")
+      .then((res) => {
+        // console.log(res.data);
+        setProd(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div id="maincontainer">
       <div id="pdoducts">
-        {products.map((ele, i) => (
+        {prod.map((ele, i) => (
           <ProductsCard data={ele} />
         ))}
       </div>
@@ -43,18 +59,16 @@ export default function Mens() {
 }
 
 function ProductsCard(data) {
-  console.log(data.data.name);
+  let item = data.data;
+  console.log(item);
+
   return (
     <div id="productscards">
       <RouterLink to={`/details/:${1}`}>
         <div className="flipkart-card">
-          <img
-            src={data.data.image}
-            alt="Product Image"
-            className="product-image"
-          />
-          <p className="product-title">{data.data.name}</p>
-          <p className="product-price">${data.data.price}</p>
+          <img src={item.img1} alt="Product Image" className="product-image" />
+          <p className="product-title">{item.name}</p>
+          <p className="product-price">${item.price}</p>
           <div className="product-rating">
             <span className="star">&#9733;</span>
             <span className="star">&#9733;</span>
@@ -62,7 +76,9 @@ function ProductsCard(data) {
             <span className="star">&#9734;</span>
             <span className="star">&#9734;</span>
           </div>
-          <p className="product-description">{data.data.description}</p>
+          <p className="product-description">
+            {item.disc.substring(0, 70)}.........
+          </p>
           <button className="add-to-cart">
             <i className="fas fa-heart"></i>Add to Cart
           </button>

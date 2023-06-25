@@ -9,3 +9,4 @@
 `3.Slick`
 `4.React-slick`
 `5.Chakra Icons`
+`6.axios`
