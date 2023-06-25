@@ -97,9 +97,33 @@
 }
 .searstext {
   font-size: 1.2rem;
-  position: relative;
-  left: 7%;
 }
+
+/* pagination butto */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-btn:hover {
+  background-color: #ccc;
+}
+
+.page-btn.active {
+  background-color: #333;
+  color: #fff;
+}
+/* ---------- */
 @media screen and (max-width: 450px) and (min-width: 100px) {
   #pdoducts {
     display: grid !important;

@@ -20,7 +20,7 @@ export default function ProDetails() {
   }, []);
   // console.log(datadetails.img1);
   var randomRating = Math.floor(Math.random() * 4) + 2;
-  console.log(randomRating);
+  // console.log(randomRating);
   return (
     <div>
       <div class="product-details">
