@@ -15,24 +15,36 @@ export default function Navbars() {
     <div>
       <nav>
         <div className="img">
-          <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="" />
+          <RouterLink to="/">
+            <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="" />
+          </RouterLink>
         </div>
         <div id="link" className={isMenuOpen ? "open" : ""}>
           <button className="link-button"></button>
           <RouterLink to="/mens">
-            <button className="link-button">MENS</button>
+            <button className="link-button">MENS ▽</button>
           </RouterLink>
-          <button className="link-button">WOMENS</button>
-          <button className="link-button">SPORTS</button>
-          <button className="link-button">CATEGORY ▽</button>
-          <button className="refer-button">
-            Your Cart -
-            <FaOpencart />
-          </button>
-          <button className="login">
-            LOGIN -
-            <HiUserCircle />
-          </button>
+          <RouterLink to="/womens">
+            <button className="link-button">WOMENS ▽</button>
+          </RouterLink>
+          <RouterLink to="/mens">
+            <button className="link-button">BOYS ▽</button>
+          </RouterLink>
+          <RouterLink to="/womens">
+            <button className="link-button">GIRLS ▽</button>
+          </RouterLink>
+          <RouterLink to="/cart">
+            <button className="refer-button">
+              Your Cart -
+              <FaOpencart />
+            </button>
+          </RouterLink>
+          <RouterLink to="/signin">
+            <button className="login">
+              LOGIN -
+              <HiUserCircle />
+            </button>
+          </RouterLink>
         </div>
         <div
           className={`hamburger ${isMenuOpen ? "open" : ""}`}
