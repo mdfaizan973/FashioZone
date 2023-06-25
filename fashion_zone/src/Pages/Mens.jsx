@@ -8,7 +8,7 @@ export default function Mens() {
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
   const [pagelength, setPagelength] = useState(0);
-  console.log(sear);
+  // console.log(sear);
 
   const getData = (sear, page) => {
     axios
@@ -20,56 +20,48 @@ export default function Mens() {
       .catch((err) => {
         console.log(err);
       });
-    if (sear === "") {
-      axios
-        .get(`http://localhost:8888/mens_data?_limit=12&_page=${page}`)
-        .then((res) => {
-          // console.log(res.data);
-          setProd(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      const timeout = setTimeout(() => {
-        axios
-          .get(
-            `http://localhost:8888/mens_data?name=${sear}&_limit=12&_page=${page}`
-          )
-          .then((res) => {
-            // console.log(res.data);
-            setProd(res.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-        return () => clearInterval(timeout);
-      }, 2500);
-    }
+    // if (sear === "") {
+    axios
+      .get(`http://localhost:8888/mens_data?_limit=12&_page=${page}`)
+      .then((res) => {
+        // console.log(res.data);
+        setProd(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
   useEffect(() => {
     getData(sear, page);
   }, [sear, page]);
-  // console.log(pagelength);
 
   const total = pagelength;
   const itemshow = 12;
   let answer = Math.ceil(total / itemshow);
-  // console.log(answer);
   let output = [];
   for (let i = 1; i <= answer; i++) {
     output.push(i);
   }
-  // console.log(output);
   const handlepages = (val) => {
     setPage(val);
   };
+
+  const handleSearch = (e) => {
+    const searchedText = e.target.value.toUpperCase();
+    setSear(searchedText);
+  };
+  const filteredData = prod.filter((item) =>
+    item.name.toUpperCase().includes(sear)
+  );
+  // setProd(filteredData);
+  // console.log(filteredData, sear);
   return (
     <>
       <div id="searchingcon">
         <h2 className="searstext">SEARCH....</h2>
         <Input
-          onChange={(e) => setSear(e.target.value)}
+          onChange={handleSearch}
           border={"2px solid black"}
           color={"black"}
           w={"30%"}
@@ -82,7 +74,7 @@ export default function Mens() {
       <div id="maincontainer">
         {prod.length ? (
           <div id="pdoducts">
-            {prod.map((ele, i) => (
+            {filteredData.map((ele, i) => (
               <ProductsCard key={i} data={ele} />
             ))}
           </div>
