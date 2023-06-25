@@ -22,7 +22,7 @@ export default function Mens() {
       });
     if (sear === "") {
       axios
-        .get(`http://localhost:8888/mens_data?_limit=4&_page=${page}`)
+        .get(`http://localhost:8888/mens_data?_limit=12&_page=${page}`)
         .then((res) => {
           // console.log(res.data);
           setProd(res.data);
@@ -33,7 +33,9 @@ export default function Mens() {
     } else {
       const timeout = setTimeout(() => {
         axios
-          .get(`http://localhost:8888/mens_data?name=${sear}`)
+          .get(
+            `http://localhost:8888/mens_data?name=${sear}&_limit=12&_page=${page}`
+          )
           .then((res) => {
             // console.log(res.data);
             setProd(res.data);
@@ -51,7 +53,7 @@ export default function Mens() {
   // console.log(pagelength);
 
   const total = pagelength;
-  const itemshow = 4;
+  const itemshow = 12;
   let answer = Math.ceil(total / itemshow);
   // console.log(answer);
   let output = [];
