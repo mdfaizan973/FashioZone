@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Styles/Mens.css";
+import { Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
 export default function Mens() {
@@ -48,23 +49,37 @@ export default function Mens() {
     getData();
   }, []);
   return (
-    <div id="maincontainer">
-      <div id="pdoducts">
-        {prod.map((ele, i) => (
-          <ProductsCard data={ele} />
-        ))}
+    <>
+      <div id="searchingcon">
+        <h2 className="searstext">SEARCH....</h2>
+        <Input
+          border={"2px solid black"}
+          color={"black"}
+          w={"30%"}
+          placeholder="Search...."
+        />
       </div>
-    </div>
+      <div id="img_ban">
+        <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
+      </div>
+      <div id="maincontainer">
+        <div id="pdoducts">
+          {prod.map((ele, i) => (
+            <ProductsCard data={ele} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
 function ProductsCard(data) {
   let item = data.data;
-  console.log(item);
+  // console.log(item);
 
   return (
     <div id="productscards">
-      <RouterLink to={`/details/:${1}`}>
+      <RouterLink to={`/details/${item.id}`}>
         <div className="flipkart-card">
           <img src={item.img1} alt="Product Image" className="product-image" />
           <p className="product-title">{item.name}</p>
