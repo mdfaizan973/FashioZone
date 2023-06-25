@@ -8,6 +8,7 @@ import Cart from "./../Pages/Cart";
 import Checkout from "./../Pages/Checkout";
 import SignIn from "./../Pages/SignIn";
 import SignUp from "./../Pages/SignUp";
+import PageNotFound from "../Pages/PageNotFound";
 export default function AllRoutes() {
   return (
     <div>
@@ -20,6 +21,7 @@ export default function AllRoutes() {
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>
   );

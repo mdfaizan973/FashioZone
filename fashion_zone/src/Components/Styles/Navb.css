@@ -1,0 +1,126 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+#link {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.link-button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: rgb(249, 241, 241);
+  color: red;
+}
+
+.refer-button {
+  padding: 16px 20px;
+  border: none;
+  background-color: #f2fdff;
+  color: rgb(59, 59, 174);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.refer-button:hover {
+  background-color: #c7eaf3;
+}
+
+.login {
+  border-radius: 5px;
+  padding: 16px 18px;
+  border: 1px solid red;
+  background-color: white;
+  color: red;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin-bottom: 4px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  #link {
+    flex-direction: column;
+    align-items: stretch;
+    display: none;
+  }
+
+  .link-button,
+  .refer-button,
+  .login {
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .open {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .open .link-button,
+  .open .refer-button,
+  .open .login {
+    margin-bottom: 20px;
+  }
+
+  .hamburger span {
+    background-color: #000;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger.open span:first-child {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:last-child {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+}
