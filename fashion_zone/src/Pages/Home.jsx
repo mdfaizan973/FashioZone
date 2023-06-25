@@ -19,7 +19,11 @@ export default function Home() {
           alt="banner"
         />
       </div>
-
+      <img
+        style={{ margin: "auto", width: "90%" }}
+        src="https://sslimages.shoppersstop.com/sys-master/root/h52/h02/30154282237982/today_s-top-picks-web---2023-06-09-new.gif"
+        alt="banner"
+      />
       <Prosection />
     </div>
   );
