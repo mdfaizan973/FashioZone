@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styles/Homes.css";
 import HomeCar1 from "./Carousal/HomeCar1";
+import SampleProCards from "./Cards/SampleProCards";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           alt="banner"
         />
       </div>
+
       <Prosection />
     </div>
   );
@@ -67,6 +69,10 @@ function Prosection() {
         <img src="https://sslimages.shoppersstop.com/sys-master/root/h3e/h46/30154278731806/limited-time-offer-web_86489937.gif" />
         <img src="https://static.vecteezy.com/system/resources/previews/016/179/950/original/editable-elegant-sales-banner-template-for-social-media-clothing-store-instagram-web-and-internet-ads-abstract-square-art-templates-with-floral-and-leaves-elements-vector.jpg" />
       </div>
+      {/* <div id="saleimg">
+        <img src="https://sslimages.shoppersstop.com/sys-master/root/h96/h1a/30163268272158/life_New-Arrivals-web_ret65.jpg" />
+      </div> */}
+      <SampleProCards />
     </>
   );
 }

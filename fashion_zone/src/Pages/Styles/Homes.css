@@ -16,8 +16,16 @@
   opacity: 0.9;
 }
 /* -----------------products-------------------- */
+#maincard_div {
+  width: 90%;
+  margin: 10px auto;
+  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .card {
-  width: 300px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
@@ -37,12 +45,6 @@
   margin-bottom: 8px;
 }
 
-#maincard_div {
-  width: 90%;
-  margin: 10px auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
 #saleimg {
   width: 90%;
   margin: auto;
