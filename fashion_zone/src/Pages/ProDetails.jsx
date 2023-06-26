@@ -3,6 +3,7 @@ import "./Styles/Details.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BiCartAlt } from "react-icons/bi";
 export default function ProDetails() {
   const { id } = useParams();
   const [datadetails, setDatadetails] = useState("");
@@ -80,7 +81,7 @@ export default function ProDetails() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <button class="add-to-cart" onClick={handleaddcart}>
-          Add to Cart
+          Add to Cart <BiCartAlt />
         </button>
       </div>
     </div>

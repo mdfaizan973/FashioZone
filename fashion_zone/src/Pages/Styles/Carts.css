@@ -84,6 +84,9 @@ body {
 
 .cart-page__checkout-btn {
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 12px;
   background-color: #2874f0;

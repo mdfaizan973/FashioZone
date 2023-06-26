@@ -1,6 +1,6 @@
 import React from "react";
 import "./Styles/Carts.css";
-import { BiCartAlt } from "react-icons/bi";
+import { BiCartAlt, BiBadgeCheck } from "react-icons/bi";
 export default function Cart() {
   let cart_arr = [1, 2, 3];
   return (
@@ -44,7 +44,7 @@ export default function Cart() {
         <div className="cart-page__subtotal">Total Price: $40.00</div>
 
         <a href="/checkout" className="cart-page__checkout-btn">
-          Proceed to Checkout
+          Proceed to Checkout <BiBadgeCheck />
         </a>
       </div>
     </div>

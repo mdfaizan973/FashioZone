@@ -3,6 +3,8 @@ import "./Styles/Mens.css";
 import { Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
+import { BiCartAlt } from "react-icons/bi";
+
 import { toast } from "react-toastify";
 export default function Mens() {
   const [prod, setProd] = useState([]);
@@ -163,7 +165,8 @@ function ProductsCard(data) {
               {item.disc.substring(0, 70)}.........
             </p>
             <button className="add-to-cart" onClick={handle_addto_cart}>
-              <i className="fas fa-heart"></i>Add to Cart
+              <BiCartAlt />
+              Add to Cart
             </button>
           </div>
         </RouterLink>
