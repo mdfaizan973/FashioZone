@@ -30,23 +30,24 @@ export default function Mens() {
         console.log(err);
       });
   };
-  console.log("search data", pagelength);
   useEffect(() => {
     getData(sear, page);
   }, [sear, page]);
 
-  const total = pagelength;
+  //sorting--------
 
+  //pagination--
+  const total = pagelength;
   let answer = Math.ceil(total / itemshow);
   let output = [];
   for (let i = 1; i <= answer; i++) {
     output.push(i);
   }
-  console.log(output);
   const handlepages = (val) => {
     setPage(val);
   };
 
+  //search--
   const handleSearch = (e) => {
     const searchedText = e.target.value.toUpperCase();
     setSear(searchedText);
@@ -54,7 +55,6 @@ export default function Mens() {
   const filteredData = prod.filter((item) =>
     item.name.toUpperCase().includes(sear)
   );
-  // console.log(filteredData, sear);
   return (
     <>
       <div id="searchingcon">
@@ -70,6 +70,13 @@ export default function Mens() {
       <div id="img_ban">
         <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
+      <div id="functionalaties">
+        <div id="filt_con">Filter</div>
+        <div id="sort_con">
+          <button className="sbutton">$ High To Low ⬇️</button>
+          <button className="sbutton">$ Low To High ⬆️</button>
+        </div>
+      </div>
       <div id="maincontainer">
         {filteredData.length ? (
           <div id="pdoducts">
@@ -79,6 +86,7 @@ export default function Mens() {
           </div>
         ) : (
           <div
+            className="notfoundimg"
             style={{
               width: "90%",
               display: "flex",
@@ -88,7 +96,12 @@ export default function Mens() {
             }}
           >
             <img src="https://i.gifer.com/HrMe.gif" />
-            <h1 style={{ fontSize: "2.5rem" }}>No Data Found..</h1>
+            <h1 style={{ fontSize: "2.5rem" }}>
+              No Data Found..{" "}
+              <span style={{ fontSize: "1.4rem", color: "red" }}>
+                Try another page
+              </span>
+            </h1>
           </div>
         )}
       </div>
