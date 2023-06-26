@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.cart-page {
+  max-width: 80%;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-item__image {
+  flex: 0 0 100px;
+  margin-right: 20px;
+}
+
+.cart-item__image img {
+  width: 100%;
+  height: auto;
+}
+
+.cart-item__details {
+  flex-grow: 1;
+}
+
+.cart-item__name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.cart-item__title {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.cart-item__price {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+
+  color: #666;
+}
+
+.cart-item__quantity {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.cart-item__remove {
+  color: #ff0000;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart-page__subtotal {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-page__checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #2874f0;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.cart-page__checkout-btn:hover {
+  background-color: #1c5fd3;
+}
+
+.cart-item__quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item__quantity-controls button {
+  padding: 5px;
+  margin: 0 5px;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.cart-item__quantity-value {
+  font-weight: bold;
+  margin: 0 5px;
+}
+@media screen and (max-width: 450px) and (min-width: 100px) {
+  .cart-item__title {
+    display: none;
+  }
+}

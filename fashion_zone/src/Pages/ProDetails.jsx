@@ -24,7 +24,7 @@ export default function ProDetails() {
   const handleaddcart = () => {
     toast.success("Products added to cart");
     setTimeout(() => {
-      window.location.href = "/checkout";
+      window.location.href = "/cart";
     }, 1000);
   };
   return (
