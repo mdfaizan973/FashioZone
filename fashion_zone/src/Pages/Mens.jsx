@@ -143,27 +143,29 @@ export default function Mens() {
 function ProductsCard(data) {
   let item = data.data;
   const [cartdata, setCartdata] = useState([]);
+  const [c, setC] = useState([]);
 
   const handle_addto_cart = (id) => {
     toast.success("Product added to cart");
     axios
       .get(`http://localhost:8888/mens_data/${id}`)
       .then((res) => {
-        // console.log(res.data);
-        setCartdata(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    // console.log("cartd", cartdata);
-    axios
-      .post(`http://localhost:8888/cart`, cartdata)
-      .then((res) => {
         console.log(res.data);
+        cartval(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+    const cartval = (ctdata) => {
+      axios
+        .post(`http://localhost:8888/cart`, ctdata)
+        .then((res) => {
+          console.log("cartd", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
   };
   return (
     <>
