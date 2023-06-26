@@ -17,7 +17,7 @@ export default function Mens() {
 
   const getData = (sear, page) => {
     axios
-      .get("http://localhost:8888/mens_data")
+      .get("http://localhost:8888/mens_data?gender=mens")
       .then((res) => {
         setPagelength(res.data.length);
       })
