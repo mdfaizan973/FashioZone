@@ -34,8 +34,6 @@ export default function Mens() {
     getData(sear, page);
   }, [sear, page]);
 
-  //sorting--------
-
   //pagination--
   const total = pagelength;
   let answer = Math.ceil(total / itemshow);
@@ -55,6 +53,20 @@ export default function Mens() {
   const filteredData = prod.filter((item) =>
     item.name.toUpperCase().includes(sear)
   );
+  //sorting--------
+  const sort_asc = () => {
+    let a = filteredData.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    setProd(a);
+  };
+  const sort_desc = () => {
+    let a = filteredData.sort(function (a, b) {
+      return b.price - a.price;
+    });
+    setProd(a);
+  };
+  console.log("sortprod", prod);
   return (
     <>
       <div id="searchingcon">
@@ -73,8 +85,12 @@ export default function Mens() {
       <div id="functionalaties">
         <div id="filt_con">Filter</div>
         <div id="sort_con">
-          <button className="sbutton">$ High To Low ⬇️</button>
-          <button className="sbutton">$ Low To High ⬆️</button>
+          <button className="sbutton" onClick={sort_asc}>
+            $ High To Low ⬇️
+          </button>
+          <button className="sbutton" onClick={sort_desc}>
+            $ Low To High ⬆️
+          </button>
         </div>
       </div>
       <div id="maincontainer">
