@@ -142,8 +142,6 @@ export default function Mens() {
 
 function ProductsCard(data) {
   let item = data.data;
-  const [cartdata, setCartdata] = useState([]);
-  const [c, setC] = useState([]);
 
   const handle_addto_cart = (id) => {
     toast.success("Product added to cart");
@@ -171,11 +169,13 @@ function ProductsCard(data) {
       <div id="productscards">
         <RouterLink>
           <div className="flipkart-card">
-            <img
-              src={item.img1}
-              alt="Product Image"
-              className="product-image"
-            />
+            <RouterLink to={`/details/${item.id}`}>
+              <img
+                src={item.img1}
+                alt="Product Image"
+                className="product-image"
+              />
+            </RouterLink>
             <p className="product-title">{item.name}</p>
             <p className="product-price">${item.price}</p>
             <div className="product-rating">

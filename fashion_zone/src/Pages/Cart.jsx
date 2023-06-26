@@ -15,6 +15,19 @@ export default function Cart() {
         console.log(err);
       });
   };
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:8888/cart/${id}`)
+      .then((res) => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     getcartdata();
   }, []);
@@ -51,7 +64,12 @@ export default function Cart() {
                   <button>+</button>
                 </div>
               </div>
-              <div className="cart-item__remove">Remove</div>
+              <div
+                onClick={() => handleDelete(ele.id)}
+                className="cart-item__remove"
+              >
+                Remove
+              </div>
             </div>
           </div>
         ))}
