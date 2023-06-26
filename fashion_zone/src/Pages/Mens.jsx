@@ -157,7 +157,7 @@ function ProductsCard(data) {
               <span className="star">&#9733;</span>
               <span className="star">&#9734;</span>
               <span className="star">&#9734;</span>
-              <span>Mens</span>
+              <span class="custom-text">Mens</span>
             </div>
             <p className="product-description">
               {item.disc.substring(0, 70)}.........

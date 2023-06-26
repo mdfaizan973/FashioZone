@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Styles/Details.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 export default function ProDetails() {
   const { id } = useParams();
   const [datadetails, setDatadetails] = useState("");
@@ -18,9 +19,14 @@ export default function ProDetails() {
   useEffect(() => {
     getData();
   }, []);
-  // console.log(datadetails.img1);
   var randomRating = Math.floor(Math.random() * 4) + 2;
-  // console.log(randomRating);
+
+  const handleaddcart = () => {
+    toast.success("Products added to cart");
+    setTimeout(() => {
+      window.location.href = "/checkout";
+    }, 1000);
+  };
   return (
     <div>
       <div class="product-details">
@@ -73,7 +79,9 @@ export default function ProDetails() {
           <h2>Customer Reviews</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <button class="add-to-cart">Add to Cart</button>
+        <button class="add-to-cart" onClick={handleaddcart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );
