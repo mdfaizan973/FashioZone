@@ -7,6 +7,7 @@ import { BiCartAlt } from "react-icons/bi";
 
 import { toast } from "react-toastify";
 import SampleProCards from "./Cards/SampleProCards";
+import Prosection from "./Cards/Prosection";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
@@ -137,6 +138,7 @@ export default function Mens() {
           </button>
         ))}
       </div>
+      <Prosection />
       <SampleProCards />
     </>
   );
