@@ -3,6 +3,7 @@ import "./Styles/Mens.css";
 import { Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
@@ -66,7 +67,7 @@ export default function Mens() {
     });
     setProd(a);
   };
-  console.log("sortprod", prod);
+
   return (
     <>
       <div id="searchingcon">
@@ -135,7 +136,9 @@ export default function Mens() {
 function ProductsCard(data) {
   let item = data.data;
   // console.log(item);
-
+  const handle_addto_cart = () => {
+    toast.success("Product added to cart");
+  };
   return (
     <>
       <div id="productscards">
@@ -154,11 +157,12 @@ function ProductsCard(data) {
               <span className="star">&#9733;</span>
               <span className="star">&#9734;</span>
               <span className="star">&#9734;</span>
+              <span>Mens</span>
             </div>
             <p className="product-description">
               {item.disc.substring(0, 70)}.........
             </p>
-            <button className="add-to-cart">
+            <button className="add-to-cart" onClick={handle_addto_cart}>
               <i className="fas fa-heart"></i>Add to Cart
             </button>
           </div>
