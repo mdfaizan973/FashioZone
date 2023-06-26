@@ -6,12 +6,13 @@ import axios from "axios";
 import { BiCartAlt } from "react-icons/bi";
 
 import { toast } from "react-toastify";
+import SampleProCards from "./Cards/SampleProCards";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
   const [pagelength, setPagelength] = useState(0);
-  const itemshow = 4;
+  const itemshow = 12;
 
   const getData = (sear, page) => {
     axios
@@ -136,6 +137,7 @@ export default function Mens() {
           </button>
         ))}
       </div>
+      <SampleProCards />
     </>
   );
 }
