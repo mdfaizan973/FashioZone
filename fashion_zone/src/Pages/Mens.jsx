@@ -8,41 +8,41 @@ export default function Mens() {
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
   const [pagelength, setPagelength] = useState(0);
-  // console.log(sear);
+  const itemshow = 4;
 
   const getData = (sear, page) => {
     axios
       .get("http://localhost:8888/mens_data")
       .then((res) => {
-        // console.log(res.data);
         setPagelength(res.data.length);
       })
       .catch((err) => {
         console.log(err);
       });
-    // if (sear === "") {
     axios
-      .get(`http://localhost:8888/mens_data?_limit=12&_page=${page}`)
+      .get(
+        `http://localhost:8888/mens_data?gender=mens&_limit=${itemshow}&_page=${page}`
+      )
       .then((res) => {
-        // console.log(res.data);
         setProd(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
+  console.log("search data", pagelength);
   useEffect(() => {
     getData(sear, page);
   }, [sear, page]);
 
   const total = pagelength;
-  const itemshow = 12;
+
   let answer = Math.ceil(total / itemshow);
   let output = [];
   for (let i = 1; i <= answer; i++) {
     output.push(i);
   }
+  console.log(output);
   const handlepages = (val) => {
     setPage(val);
   };
@@ -54,7 +54,6 @@ export default function Mens() {
   const filteredData = prod.filter((item) =>
     item.name.toUpperCase().includes(sear)
   );
-  // setProd(filteredData);
   // console.log(filteredData, sear);
   return (
     <>
@@ -72,7 +71,7 @@ export default function Mens() {
         <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
       <div id="maincontainer">
-        {prod.length ? (
+        {filteredData.length ? (
           <div id="pdoducts">
             {filteredData.map((ele, i) => (
               <ProductsCard key={i} data={ele} />

@@ -26,7 +26,21 @@ nav {
   background-color: rgb(249, 241, 241);
   color: red;
 }
-
+.web-logo {
+  width: 155px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.zone {
+  color: red;
+}
 .refer-button {
   padding: 16px 20px;
   border: none;

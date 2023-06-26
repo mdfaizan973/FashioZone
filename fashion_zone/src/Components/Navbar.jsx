@@ -16,7 +16,9 @@ export default function Navbars() {
       <nav>
         <div className="img">
           <RouterLink to="/">
-            <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="" />
+            <div class="web-logo">
+              Fashion<span className="zone">Zone</span>
+            </div>
           </RouterLink>
         </div>
         <div id="link" className={isMenuOpen ? "open" : ""}>
