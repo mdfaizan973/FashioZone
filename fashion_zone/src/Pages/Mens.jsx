@@ -53,8 +53,13 @@ export default function Mens() {
     const searchedText = e.target.value.toUpperCase();
     setSear(searchedText);
   };
-  const filteredData = prod.filter((item) =>
-    item.name.toUpperCase().includes(sear)
+  const filteredData = prod.filter(
+    (item) =>
+      // return (
+      item.name.toUpperCase().includes(sear) ||
+      item.title.toUpperCase().includes(sear) ||
+      item.price.toUpperCase().includes(sear)
+    // )
   );
   //sorting--------
   const sort_asc = () => {
@@ -137,14 +142,25 @@ export default function Mens() {
 
 function ProductsCard(data) {
   let item = data.data;
-  // console.log(item);
-  const handle_addto_cart = () => {
+  const [cartd, setCart] = useState([]);
+  const handle_addto_cart = (id) => {
     toast.success("Product added to cart");
+    axios
+      .get(`http://localhost:8888/mens_data/${id}`)
+      .then((res) => {
+        // console.log(res.data);
+        setCart(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+  console.log("cartd", cartd);
   return (
     <>
+      {/* to={`/details/${item.id}`} */}
       <div id="productscards">
-        <RouterLink to={`/details/${item.id}`}>
+        <RouterLink>
           <div className="flipkart-card">
             <img
               src={item.img1}
@@ -164,7 +180,10 @@ function ProductsCard(data) {
             <p className="product-description">
               {item.disc.substring(0, 70)}.........
             </p>
-            <button className="add-to-cart" onClick={handle_addto_cart}>
+            <button
+              className="add-to-cart"
+              onClick={() => handle_addto_cart(item.id)}
+            >
               <BiCartAlt />
               Add to Cart
             </button>

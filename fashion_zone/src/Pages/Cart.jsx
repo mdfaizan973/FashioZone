@@ -40,7 +40,9 @@ export default function Cart() {
             </div>
           </div>
         ))}
-        <div className="cart-page__subtotal">Total Quantity: 1</div>
+        <div className="cart-page__subtotal">
+          Total Quantity: {cart_arr.length}
+        </div>
         <div className="cart-page__subtotal">Total Price: $40.00</div>
 
         <a href="/checkout" className="cart-page__checkout-btn">
