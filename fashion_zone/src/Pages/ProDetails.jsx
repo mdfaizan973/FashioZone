@@ -24,6 +24,23 @@ export default function ProDetails() {
 
   const handleaddcart = () => {
     toast.success("Products added to cart");
+    axios
+      .get(`http://localhost:8888/mens_data/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        // cartval(res.data);
+        axios
+          .post(`http://localhost:8888/cart`, res.data)
+          .then((rest) => {
+            console.log("cartd", rest.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setTimeout(() => {
       window.location.href = "/cart";
     }, 1000);
