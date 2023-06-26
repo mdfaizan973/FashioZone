@@ -151,21 +151,19 @@ function ProductsCard(data) {
       .get(`http://localhost:8888/mens_data/${id}`)
       .then((res) => {
         console.log(res.data);
-        cartval(res.data);
+        // cartval(res.data);
+        axios
+          .post(`http://localhost:8888/cart`, res.data)
+          .then((rest) => {
+            console.log("cartd", rest.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
       });
-    const cartval = (ctdata) => {
-      axios
-        .post(`http://localhost:8888/cart`, ctdata)
-        .then((res) => {
-          console.log("cartd", res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
   };
   return (
     <>
