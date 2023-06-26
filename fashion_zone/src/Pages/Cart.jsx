@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Styles/Carts.css";
 import { BiCartAlt, BiBadgeCheck } from "react-icons/bi";
 import axios from "axios";
+import { HiBackspace } from "react-icons/hi";
 export default function Cart() {
   const [cart_pro, setCart_Pro] = useState([]);
-  const [tprice, setTprice] = useState(0);
+  const [qty, setQty] = useState(1);
+
   const getcartdata = () => {
     axios
       .get(`http://localhost:8888/cart`)
@@ -36,6 +38,9 @@ export default function Cart() {
   for (let elem of cart_pro) {
     sum += +elem.price;
   }
+  const handleClick = (val) => {
+    setQty(qty + val);
+  };
   return (
     <div>
       <div className="cart-page">
@@ -55,20 +60,24 @@ export default function Cart() {
             </div>
             <div className="cart-item__details">
               <div className="cart-item__name">{ele.name}</div>
-              <div className="cart-item__title">{ele.title}</div>
+              <div className="cart-item__title">
+                {ele.title} <span id="genspan">{ele.gender.toUpperCase()}</span>
+              </div>
               <div className="cart-item__price">${ele.price}</div>
               <div className="cart-item__quantity">
                 <div className="cart-item__quantity-controls">
-                  <button>-</button>
-                  <div className="cart-item__quantity-value">1</div>
-                  <button>+</button>
+                  <button disabled={qty === 1} onClick={() => handleClick(-1)}>
+                    -
+                  </button>
+                  <div className="cart-item__quantity-value">{qty}</div>
+                  <button onClick={() => handleClick(1)}>+</button>
                 </div>
               </div>
               <div
                 onClick={() => handleDelete(ele.id)}
                 className="cart-item__remove"
               >
-                Remove
+                <HiBackspace /> Remove
               </div>
             </div>
           </div>

@@ -170,9 +170,6 @@
   transition: background-color 0.3s ease;
 }
 
-.custom-text:hover {
-  background-color: #45a049;
-}
 /* ---------- */
 @media screen and (max-width: 450px) and (min-width: 100px) {
   #pdoducts {

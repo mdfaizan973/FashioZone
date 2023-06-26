@@ -72,7 +72,9 @@ body {
 .cart-item__remove {
   color: #ff0000;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .cart-page__subtotal {
@@ -121,6 +123,19 @@ body {
 .cart-item__quantity-value {
   font-weight: bold;
   margin: 0 5px;
+}
+
+#genspan {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: 1px solid white;
+  padding: 2px 8px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 @media screen and (max-width: 450px) and (min-width: 100px) {
   .cart-item__title {
