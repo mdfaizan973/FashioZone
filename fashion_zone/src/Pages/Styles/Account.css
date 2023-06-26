@@ -12,9 +12,20 @@
   padding: 40px;
   background-color: #fff;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px 1px,
+    rgba(0, 0, 0, 0.06) 1px 1px 2px 1px;
+  margin-top: 20px;
 }
-
+.signin-container {
+  width: 450px;
+  height: 100%;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px 1px,
+    rgba(0, 0, 0, 0.06) 1px 1px 2px 1px;
+  margin-top: 20px;
+}
 .login-title {
   text-align: center;
   font-size: 28px;
@@ -49,7 +60,7 @@
 }
 
 .form-group input[type="submit"] {
-  background-color: #1b4cfb;
+  background-color: #2874f0;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -60,7 +71,7 @@
 }
 
 .form-group input[type="submit"]:hover {
-  background-color: #fa3b00;
+  background-color: #1c4891;
 }
 
 .register-link {
