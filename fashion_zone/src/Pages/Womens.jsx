@@ -90,7 +90,7 @@ export default function Womens() {
         />
       </div>
       <div id="img_ban">
-        <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
+        <img src="https://olavi.in/cdn/shop/files/Banner_olavi_1944x.jpg?v=1665663372" />
       </div>
       <div id="functionalaties">
         <div id="filt_con">Filter</div>
@@ -188,7 +188,7 @@ function ProductsCard(data) {
               <span className="star">&#9733;</span>
               <span className="star">&#9734;</span>
               <span className="star">&#9734;</span>
-              <span class="custom-text">Mens</span>
+              <span class="custom-text">{item.gender}</span>
             </div>
             <p className="product-description">
               {item.disc.substring(0, 70)}.........
