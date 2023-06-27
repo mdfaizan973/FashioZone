@@ -1,6 +1,16 @@
 import React from "react";
 import "./Styles/Checkout.css";
+import { toast } from "react-toastify";
 export default function Checkout() {
+  const handlecheckout = (e) => {
+    e.preventDefault();
+    toast.success("Payment successful!");
+    let r = setTimeout(() => {
+      window.location.href = "/";
+
+      return () => r;
+    }, 2500);
+  };
   return (
     <div>
       <div className="mainscreen">
@@ -13,7 +23,7 @@ export default function Checkout() {
             />
           </div>
           <div className="rightside">
-            <form action="">
+            <form action="" onSubmit={handlecheckout}>
               <h1>CheckOut</h1>
               <h2>Payment Information</h2>
               <p>Cardholder Name</p>

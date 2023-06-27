@@ -138,7 +138,7 @@ export default function Mens() {
           </button>
         ))}
       </div>
-      <Prosection />
+      {/* <Prosection /> */}
       <SampleProCards />
     </>
   );

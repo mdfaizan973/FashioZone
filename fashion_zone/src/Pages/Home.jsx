@@ -25,7 +25,7 @@ export default function Home() {
         src="https://sslimages.shoppersstop.com/sys-master/root/h52/h02/30154282237982/today_s-top-picks-web---2023-06-09-new.gif"
         alt="banner"
       />
-      <Prosection />
+      {/* <Prosection /> */}
       <div id="saleimg">
         <img src="https://sslimages.shoppersstop.com/sys-master/root/h3e/h46/30154278731806/limited-time-offer-web_86489937.gif" />
         <img src="https://static.vecteezy.com/system/resources/previews/016/179/950/original/editable-elegant-sales-banner-template-for-social-media-clothing-store-instagram-web-and-internet-ads-abstract-square-art-templates-with-floral-and-leaves-elements-vector.jpg" />
