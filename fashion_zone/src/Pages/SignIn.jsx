@@ -11,22 +11,25 @@ export default function SignIn() {
     //   email,
     //   pass,
     // };
-    if (email == "eve.holt@reqres.in") {
-      fetch(`https://reqres.in/api/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, pass }),
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          alert("Admin Login Success...");
-          window.location.href = "/"; //here should be admin
+    if (email == "admin_fz@gmail.com" && pass === "hello_admin") {
+      fetch("http://localhost:8888/admin")
+        .then((response) => response.json())
+        .then((users) => {
+          const user = users.find(
+            (user) => user.email === email && user.pass === pass
+          );
+          if (user) {
+            toast.success("Admin Login Successful");
+            let st = setTimeout(() => {
+              window.location.href = "/adminpanel";
+              return () => st;
+            }, 1000);
+          } else {
+            toast.error("Login Failed");
+          }
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          console.error("Error:", error);
         });
     } else {
       fetch("http://localhost:8888/users")
@@ -39,11 +42,21 @@ export default function SignIn() {
             toast.success("Login successful");
             let st = setTimeout(() => {
               window.location.href = "/";
-
               return () => st;
             }, 1000);
           } else {
-            toast.error("Login Failed");
+            let st1 = setTimeout(() => {
+              toast.error("Login Failed");
+              return () => st1;
+            }, 400);
+            let st2 = setTimeout(() => {
+              toast.error("User Not Found");
+              return () => st2;
+            }, 2000);
+            let st3 = setTimeout(() => {
+              toast.info("If You Are New User Please Create Your Account");
+              return () => st3;
+            }, 2800);
           }
         })
         .catch((error) => {
