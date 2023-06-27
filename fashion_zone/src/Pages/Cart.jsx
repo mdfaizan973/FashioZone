@@ -3,6 +3,7 @@ import "./Styles/Carts.css";
 import { BiCartAlt, BiBadgeCheck } from "react-icons/bi";
 import axios from "axios";
 import { HiBackspace } from "react-icons/hi";
+import SampleProCards from "./Cards/SampleProCards";
 export default function Cart() {
   const [cart_pro, setCart_Pro] = useState([]);
   const [qty, setQty] = useState(1);
@@ -91,6 +92,7 @@ export default function Cart() {
           Proceed to Checkout <BiBadgeCheck />
         </a>
       </div>
+      <SampleProCards />
     </div>
   );
 }
