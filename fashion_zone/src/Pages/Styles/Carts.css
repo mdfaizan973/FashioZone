@@ -103,6 +103,7 @@ body {
 }
 
 .cart-page__checkout-btn:hover {
+  transform: scale(1.01) translateY(-3px);
   background-color: #1c5fd3;
 }
 

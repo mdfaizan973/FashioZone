@@ -10,6 +10,7 @@ import SignIn from "./../Pages/SignIn";
 import SignUp from "./../Pages/SignUp";
 import PageNotFound from "../Pages/PageNotFound";
 import Admin from "../Pages/Admin";
+import Faizan from "../Pages/Faizan";
 export default function AllRoutes() {
   return (
     <div>
@@ -23,6 +24,7 @@ export default function AllRoutes() {
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/adminpanel" element={<Admin />}></Route>
+        <Route path="/faizan" element={<Faizan />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>

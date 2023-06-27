@@ -45,14 +45,10 @@ export default function SignIn() {
               return () => st;
             }, 1000);
           } else {
-            let st1 = setTimeout(() => {
-              toast.error("Login Failed");
-              return () => st1;
-            }, 400);
             let st2 = setTimeout(() => {
               toast.error("User Not Found");
               return () => st2;
-            }, 2000);
+            }, 1000);
             let st3 = setTimeout(() => {
               toast.info("If You Are New User Please Create Your Account");
               return () => st3;
