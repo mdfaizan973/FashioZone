@@ -13,6 +13,7 @@ export default function SignUp() {
       email,
       pass,
     };
+
     axios
       .post(`http://localhost:8888/users`, obj)
       .then((res) => {

@@ -71,6 +71,7 @@
 }
 
 .add-to-cart:hover {
+  transform: scale(1.01) translateY(-3px);
   background-color: #1c4891;
 }
 
