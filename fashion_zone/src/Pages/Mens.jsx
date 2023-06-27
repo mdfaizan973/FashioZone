@@ -3,41 +3,44 @@ import "./Styles/Mens.css";
 import { Input, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import axios from "axios";
+import { BiCartAlt } from "react-icons/bi";
+
+import { toast } from "react-toastify";
+import SampleProCards from "./Cards/SampleProCards";
+import Prosection from "./Cards/Prosection";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
   const [pagelength, setPagelength] = useState(0);
-  // console.log(sear);
+  const itemshow = 12;
 
   const getData = (sear, page) => {
     axios
-      .get("http://localhost:8888/mens_data")
+      .get("http://localhost:8888/mens_data?gender=mens")
       .then((res) => {
-        // console.log(res.data);
         setPagelength(res.data.length);
       })
       .catch((err) => {
         console.log(err);
       });
-    // if (sear === "") {
     axios
-      .get(`http://localhost:8888/mens_data?_limit=12&_page=${page}`)
+      .get(
+        `http://localhost:8888/mens_data?gender=mens&_limit=${itemshow}&_page=${page}`
+      )
       .then((res) => {
-        // console.log(res.data);
         setProd(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
   useEffect(() => {
     getData(sear, page);
   }, [sear, page]);
 
+  //pagination--
   const total = pagelength;
-  const itemshow = 12;
   let answer = Math.ceil(total / itemshow);
   let output = [];
   for (let i = 1; i <= answer; i++) {
@@ -47,15 +50,33 @@ export default function Mens() {
     setPage(val);
   };
 
+  //search--
   const handleSearch = (e) => {
     const searchedText = e.target.value.toUpperCase();
     setSear(searchedText);
   };
-  const filteredData = prod.filter((item) =>
-    item.name.toUpperCase().includes(sear)
+  const filteredData = prod.filter(
+    (item) =>
+      // return (
+      item.name.toUpperCase().includes(sear) ||
+      item.title.toUpperCase().includes(sear) ||
+      item.price.toUpperCase().includes(sear)
+    // )
   );
-  // setProd(filteredData);
-  // console.log(filteredData, sear);
+  //sorting--------
+  const sort_asc = () => {
+    let a = filteredData.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    setProd(a);
+  };
+  const sort_desc = () => {
+    let a = filteredData.sort(function (a, b) {
+      return b.price - a.price;
+    });
+    setProd(a);
+  };
+
   return (
     <>
       <div id="searchingcon">
@@ -71,8 +92,19 @@ export default function Mens() {
       <div id="img_ban">
         <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
+      <div id="functionalaties">
+        <div id="filt_con">Filter</div>
+        <div id="sort_con">
+          <button className="sbutton" onClick={sort_asc}>
+            $ High To Low ⬇️
+          </button>
+          <button className="sbutton" onClick={sort_desc}>
+            $ Low To High ⬆️
+          </button>
+        </div>
+      </div>
       <div id="maincontainer">
-        {prod.length ? (
+        {filteredData.length ? (
           <div id="pdoducts">
             {filteredData.map((ele, i) => (
               <ProductsCard key={i} data={ele} />
@@ -80,6 +112,7 @@ export default function Mens() {
           </div>
         ) : (
           <div
+            className="notfoundimg"
             style={{
               width: "90%",
               display: "flex",
@@ -89,7 +122,12 @@ export default function Mens() {
             }}
           >
             <img src="https://i.gifer.com/HrMe.gif" />
-            <h1 style={{ fontSize: "2.5rem" }}>No Data Found..</h1>
+            <h1 style={{ fontSize: "2.5rem" }}>
+              No Data Found..{" "}
+              <span style={{ fontSize: "1.4rem", color: "red" }}>
+                Try another page
+              </span>
+            </h1>
           </div>
         )}
       </div>
@@ -100,24 +138,48 @@ export default function Mens() {
           </button>
         ))}
       </div>
+      <Prosection />
+      <SampleProCards />
     </>
   );
 }
 
 function ProductsCard(data) {
   let item = data.data;
-  // console.log(item);
 
+  const handle_addto_cart = (id) => {
+    toast.success("Product added to cart");
+    axios
+      .get(`http://localhost:8888/mens_data/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        // cartval(res.data);
+        axios
+          .post(`http://localhost:8888/cart`, res.data)
+          .then((rest) => {
+            console.log("cartd", rest.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
+      {/* to={`/details/${item.id}`} */}
       <div id="productscards">
-        <RouterLink to={`/details/${item.id}`}>
+        <RouterLink>
           <div className="flipkart-card">
-            <img
-              src={item.img1}
-              alt="Product Image"
-              className="product-image"
-            />
+            <RouterLink to={`/details/${item.id}`}>
+              <img
+                src={item.img1}
+                alt="Product Image"
+                className="product-image"
+              />
+            </RouterLink>
             <p className="product-title">{item.name}</p>
             <p className="product-price">${item.price}</p>
             <div className="product-rating">
@@ -126,12 +188,17 @@ function ProductsCard(data) {
               <span className="star">&#9733;</span>
               <span className="star">&#9734;</span>
               <span className="star">&#9734;</span>
+              <span class="custom-text">Mens</span>
             </div>
             <p className="product-description">
               {item.disc.substring(0, 70)}.........
             </p>
-            <button className="add-to-cart">
-              <i className="fas fa-heart"></i>Add to Cart
+            <button
+              className="add-to-cart"
+              onClick={() => handle_addto_cart(item.id)}
+            >
+              <BiCartAlt />
+              Add to Cart
             </button>
           </div>
         </RouterLink>

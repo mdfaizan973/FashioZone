@@ -1,13 +1,6 @@
 import React from "react";
 import "./SampleCard.css";
 export default function SampleProCards() {
-  return (
-    <div>
-      <Prosection />
-    </div>
-  );
-}
-function Prosection() {
   let products_Data = [
     {
       image:
@@ -30,7 +23,6 @@ function Prosection() {
         "https://sslimages.shoppersstop.com/sys-master/root/hb4/h0f/30223702130718/4-Widget-web-Dresses-%26-Jumpsuits_eoss-23_01.jpg",
     },
   ];
-
   return (
     <>
       <div id="maincard_divs">
