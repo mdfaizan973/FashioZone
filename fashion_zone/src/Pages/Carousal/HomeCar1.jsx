@@ -7,25 +7,46 @@ import Slider from "react-slick";
 import { Box, Image } from "@chakra-ui/react";
 const sliderData1 = [
   {
-    image: "https://www.justbake.in/assets/img/home/img1.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/5b/d6/5bd65eb6aff46eb117ec37d5a9cc114972c2e908.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+  },
+
+  {
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/f9/89/f989d39a7bf28c8ba387908561818793c67948c1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img3.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/e7/52/e752c4882dde75103106662366a0a392e24b237f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img1.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/6d/d4/6dd426aa248836eae0ff9e9b1d1d19d1c9990a4a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img3.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/a1/c8/a1c83bd95d557bf571efb85cbd0cd3ba2e7f0ef3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img1.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/13/9e/139eca1b27e4d7e766e1582e12441bff795f0d76.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+  },
+
+  {
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/5d/44/5d444fc32f58458d44345511468631684c3cfb0a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img3.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/e9/5e/e95ea7bea7b5d240f58d20684da1d1bc4c1166a6.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
   {
-    image: "https://www.justbake.in/assets/img/home/img1.jpg",
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/f9/eb/f9ebd03863dcfeb6c255a96fc53a11354bd29a73.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+  },
+  {
+    image:
+      "https://lp2.hm.com/hmgoepprod?set=source[/89/d9/89d9fb925e73ece7dd2c04bebf092d5c919cc973.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
   },
 ];
 
