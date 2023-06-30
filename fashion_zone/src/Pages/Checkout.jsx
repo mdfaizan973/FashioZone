@@ -8,7 +8,7 @@ export default function Checkout() {
     e.preventDefault();
     toast.success("Payment successful!");
     let r = setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/home";
 
       return () => r;
     }, 2500);
