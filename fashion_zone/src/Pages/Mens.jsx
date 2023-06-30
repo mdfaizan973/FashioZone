@@ -8,6 +8,8 @@ import { BiCartAlt } from "react-icons/bi";
 import { toast } from "react-toastify";
 import SampleProCards from "./Cards/SampleProCards";
 import Prosection from "./Cards/Prosection";
+import Navbars from "../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
@@ -79,6 +81,8 @@ export default function Mens() {
 
   return (
     <>
+      <Navbars />
+
       <div id="searchingcon">
         <h2 className="searstext">SEARCH....</h2>
         <Input
@@ -140,6 +144,7 @@ export default function Mens() {
       </div>
       {/* <Prosection /> */}
       <SampleProCards />
+      <Footer />
     </>
   );
 }
@@ -168,41 +173,43 @@ function ProductsCard(data) {
       });
   };
   return (
-    <>
-      {/* to={`/details/${item.id}`} */}
-      <div id="productscards">
-        <RouterLink>
-          <div className="flipkart-card">
-            <RouterLink to={`/details/${item.id}`}>
-              <img
-                src={item.img1}
-                alt="Product Image"
-                className="product-image"
-              />
-            </RouterLink>
-            <p className="product-title">{item.name}</p>
-            <p className="product-price">${item.price}</p>
-            <div className="product-rating">
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9734;</span>
-              <span className="star">&#9734;</span>
-              <span class="custom-text">Mens</span>
+    <div>
+      <div>
+        {/* to={`/details/${item.id}`} */}
+        <div id="productscards">
+          <RouterLink>
+            <div className="flipkart-card">
+              <RouterLink to={`/details/${item.id}`}>
+                <img
+                  src={item.img1}
+                  alt="Product Image"
+                  className="product-image"
+                />
+              </RouterLink>
+              <p className="product-title">{item.name}</p>
+              <p className="product-price">${item.price}</p>
+              <div className="product-rating">
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9734;</span>
+                <span className="star">&#9734;</span>
+                <span class="custom-text">Mens</span>
+              </div>
+              <p className="product-description">
+                {item.disc.substring(0, 70)}.........
+              </p>
+              <button
+                className="add-to-cart"
+                onClick={() => handle_addto_cart(item.id)}
+              >
+                <BiCartAlt />
+                Add to Cart
+              </button>
             </div>
-            <p className="product-description">
-              {item.disc.substring(0, 70)}.........
-            </p>
-            <button
-              className="add-to-cart"
-              onClick={() => handle_addto_cart(item.id)}
-            >
-              <BiCartAlt />
-              Add to Cart
-            </button>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

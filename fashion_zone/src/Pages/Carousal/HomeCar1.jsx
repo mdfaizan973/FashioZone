@@ -52,7 +52,7 @@ const sliderData1 = [
 
 export default function HomeCar1() {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-    <Box position="absolute" marginTop="130px" marginLeft="150px" zIndex={1}>
+    <Box position="absolute" marginTop="240px" marginLeft="100px" zIndex={1}>
       <ChevronLeftIcon
         boxSize={10}
         background="gray.50"
@@ -65,7 +65,7 @@ export default function HomeCar1() {
   );
 
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <Box position="absolute" marginTop="-190px" marginLeft="1300px">
+    <Box position="absolute" marginTop="-220px" marginLeft="1250px">
       <ChevronRightIcon
         boxSize={10}
         background="gray.50"

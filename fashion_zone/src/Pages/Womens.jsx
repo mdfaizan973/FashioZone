@@ -8,6 +8,8 @@ import { BiCartAlt } from "react-icons/bi";
 import { toast } from "react-toastify";
 import SampleProCards from "./Cards/SampleProCards";
 import Prosection from "./Cards/Prosection";
+import Navbars from "../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Womens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
@@ -79,6 +81,8 @@ export default function Womens() {
 
   return (
     <>
+      <Navbars />
+
       <div id="searchingcon">
         <h2 className="searstext">SEARCH....</h2>
         <Input
@@ -140,6 +144,7 @@ export default function Womens() {
       </div>
       {/* <Prosection /> */}
       <SampleProCards />
+      <Footer />
     </>
   );
 }

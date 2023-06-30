@@ -15,7 +15,7 @@ export default function Navbars() {
     <div>
       <nav>
         <div className="img">
-          <RouterLink to="/">
+          <RouterLink to="/home">
             <div class="web-logo">
               Fashion<span className="zone">Zone</span>
             </div>
@@ -41,7 +41,7 @@ export default function Navbars() {
               <FaOpencart />
             </button>
           </RouterLink>
-          <RouterLink to="/signin">
+          <RouterLink to="/">
             <button className="login">
               LOGIN -
               <HiUserCircle />

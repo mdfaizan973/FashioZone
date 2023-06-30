@@ -15,13 +15,13 @@ export default function AllRoutes() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<SignIn />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/mens" element={<Mens />}></Route>
         <Route path="/womens" element={<Womens />}></Route>
         <Route path="/details/:id" element={<ProDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
-        <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/adminpanel" element={<Admin />}></Route>
         <Route path="/faizan" element={<Faizan />}></Route>

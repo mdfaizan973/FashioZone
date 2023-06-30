@@ -41,7 +41,7 @@ export default function SignIn() {
           if (user) {
             toast.success("Login successful");
             let st = setTimeout(() => {
-              window.location.href = "/";
+              window.location.href = "/home";
               return () => st;
             }, 1000);
           } else {

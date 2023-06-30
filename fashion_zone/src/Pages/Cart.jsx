@@ -4,6 +4,8 @@ import { BiCartAlt, BiBadgeCheck } from "react-icons/bi";
 import axios from "axios";
 import { HiBackspace } from "react-icons/hi";
 import SampleProCards from "./Cards/SampleProCards";
+import Navbars from "../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Cart() {
   const [cart_pro, setCart_Pro] = useState([]);
   const [qty, setQty] = useState(1);
@@ -44,6 +46,8 @@ export default function Cart() {
   };
   return (
     <div>
+      <Navbars />
+
       <div className="cart-page">
         <h1
           style={{
@@ -93,6 +97,7 @@ export default function Cart() {
         </a>
       </div>
       <SampleProCards />
+      <Footer />
     </div>
   );
 }

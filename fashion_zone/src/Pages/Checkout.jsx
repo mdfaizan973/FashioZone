@@ -1,6 +1,8 @@
 import React from "react";
 import "./Styles/Checkout.css";
 import { toast } from "react-toastify";
+import Navbars from "./../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Checkout() {
   const handlecheckout = (e) => {
     e.preventDefault();
@@ -13,6 +15,8 @@ export default function Checkout() {
   };
   return (
     <div>
+      <Navbars />
+
       <div className="mainscreen">
         <div className="card">
           <div className="leftside">
@@ -76,6 +80,7 @@ export default function Checkout() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

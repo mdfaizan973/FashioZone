@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BiCartAlt } from "react-icons/bi";
+import Navbars from "../Components/Navbar";
+import Footer from "./../Components/Footer";
 export default function ProDetails() {
   const { id } = useParams();
   const [datadetails, setDatadetails] = useState("");
@@ -47,6 +49,8 @@ export default function ProDetails() {
   };
   return (
     <div>
+      <Navbars />
+
       <div class="product-details">
         <div class="product-header">
           <div>
@@ -101,6 +105,7 @@ export default function ProDetails() {
           Add to Cart <BiCartAlt />
         </button>
       </div>
+      <Footer />
     </div>
   );
 }
