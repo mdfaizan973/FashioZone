@@ -6,6 +6,7 @@ import { HiBackspace } from "react-icons/hi";
 import SampleProCards from "./Cards/SampleProCards";
 import Navbars from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Prosection from "./Cards/Prosection";
 export default function Cart() {
   const [cart_pro, setCart_Pro] = useState([]);
   const [qty, setQty] = useState(1);
@@ -96,7 +97,7 @@ export default function Cart() {
           Proceed to Checkout <BiBadgeCheck />
         </a>
       </div>
-      <SampleProCards />
+      <Prosection />
       <Footer />
     </div>
   );
