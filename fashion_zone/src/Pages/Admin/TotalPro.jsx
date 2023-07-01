@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import "./TotalPro.css";
+import "./TotalPro.css";
 import { Link as RouterLink } from "react-router-dom";
 // import "../Styles/Admins.css";
 import axios from "axios";
 export default function TotalPro() {
+  let arr = [1, 2, 3, 4, 5];
   return (
     <div>
-      <div id="main_container">
-        <div id="sidebar">
+      <div id="main_containeraa">
+        <div id="sidebarsaa">
           <h1>Admin Dashboard</h1>
           <ul>
             <RouterLink to="/adminpanel">
@@ -24,8 +25,10 @@ export default function TotalPro() {
             </RouterLink>
           </ul>
         </div>
-        <div id="content">
+        <div id="contentaa">
+          {/* {arr.map((ele, i) => ( */}
           <ProductsCard />
+          {/* ))} */}
         </div>
       </div>
     </div>
@@ -34,7 +37,6 @@ export default function TotalPro() {
 
 function ProductsCard() {
   let arr = [1, 2, 3, 4, 5];
-
   const [data, setData] = useState([]);
   const getdata = () => {
     axios
@@ -57,15 +59,12 @@ function ProductsCard() {
           <div class="cardd">
             <img id="proimgs" src={ele.img1} />
 
-            <h2 class="card__title">
-              Product <span class="card__titleSpan">One</span>
-            </h2>
+            <h2 class="card__title"></h2>
             <div class="card__content">
               <div class="card__features">
                 <p class="card__feature">{ele.title.substring(0, 20)}</p>
                 <p class="card__feature">{ele.name}</p>
-                <p class="card__feature">{ele.gender.toUpperCase()}</p>
-                <p class="card__feature">${ele.price}</p>
+                <p class="card__feature">$ {ele.price}</p>
               </div>
               <a href="#" class="card__link">
                 Go to Product
