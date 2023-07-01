@@ -23,7 +23,7 @@ export default function Admin() {
             </RouterLink>
           </ul>
         </div>
-        <div id="content">
+        <div id="contentr">
           <Form />
         </div>
       </div>

@@ -6,14 +6,15 @@ export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [genders, setGenders] = useState("");
   const submituser = (e) => {
     e.preventDefault();
     let obj = {
       name,
       email,
       pass,
+      genders,
     };
-
     axios
       .post(`http://localhost:8888/users`, obj)
       .then((res) => {
@@ -44,6 +45,19 @@ export default function SignUp() {
               />
             </div>
 
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select
+                id="gender"
+                onChange={(e) => setGenders(e.target.value)}
+                required
+              >
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -72,7 +86,7 @@ export default function SignUp() {
           </form>
 
           <div className="register-link">
-            Allready an Account to FashionZone! <a href="/signin">Login</a>
+            Allready an Account to FashionZone! <a href="/">Login</a>
           </div>
         </div>
       </div>
