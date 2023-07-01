@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./TotalPro.css";
+// import "./TotalPro.css";
 import { Link as RouterLink } from "react-router-dom";
-import "../Styles/Admins.css";
+// import "../Styles/Admins.css";
 import axios from "axios";
 export default function TotalPro() {
   return (

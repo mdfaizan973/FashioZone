@@ -6,7 +6,7 @@ export default function Admin() {
   return (
     <div>
       <div id="main_container">
-        <div id="sidebar">
+        <div id="sidebars">
           <h1>Admin Dashboard</h1>
           <ul>
             <RouterLink to="/adminpanel">
