@@ -36,7 +36,6 @@ export default function TotalPro() {
 }
 
 function ProductsCard() {
-  let arr = [1, 2, 3, 4, 5];
   const [data, setData] = useState([]);
   const getdata = () => {
     axios

@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 // import "../Styles/Admins.css";
 import "./Web.css";
+import axios from "axios";
 export default function WebUser() {
-  let arr = [1, 2, 3, 4, 5, 7, 8];
-
+  // let arr = [1, 2, 3, 4, 5, 7, 8];
+  const [data, setData] = useState([]);
+  const getdata = () => {
+    axios
+      .get("http://localhost:8888/users")
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getdata();
+  }, []);
   return (
     <div>
       <div id="main_container">
@@ -26,8 +41,14 @@ export default function WebUser() {
           </ul>
         </div>
         <div id="content">
-          {arr.map((ele, i) => (
-            <Userfunc />
+          {data.map((ele, i) => (
+            <Userfunc
+              key={ele.id}
+              datas={ele}
+              // name={ele.name}
+              // pass={ele.pass}
+              // email={ele.email}
+            />
           ))}
         </div>
       </div>
@@ -35,7 +56,8 @@ export default function WebUser() {
   );
 }
 //
-function Userfunc() {
+function Userfunc(data) {
+  console.log(data.datas.name);
   return (
     <div id="mainconti">
       <div class="mainq">
@@ -53,10 +75,10 @@ function Userfunc() {
               class="icon"
               src="https://cdn1.iconfinder.com/data/icons/micon-social-pack/512/twitch-512.png"
             />
-            Md Faizan
+            {data.datas.name}
           </p>
-          <p class="bio">Email: faizan@gmail.com</p>
-          <p class="bio">Pass: faizan123</p>
+          <p class="bio">Email: {data.datas.email}</p>
+          <p class="bio">Pass: {data.datas.pass}</p>
         </div>
       </div>
     </div>
