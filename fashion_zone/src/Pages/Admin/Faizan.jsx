@@ -1,8 +1,8 @@
 import React from "react";
+
 import { Link as RouterLink } from "react-router-dom";
-import "./Styles/Admins.css";
-import Form from "./Admin/Form";
-export default function Admin() {
+import "../Styles/Admins.css";
+export default function Faizan() {
   return (
     <div>
       <div id="main_container">
@@ -23,9 +23,7 @@ export default function Admin() {
             </RouterLink>
           </ul>
         </div>
-        <div id="content">
-          <Form />
-        </div>
+        <div id="content">Faizan</div>
       </div>
     </div>
   );
