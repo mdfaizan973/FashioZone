@@ -62,13 +62,21 @@ function Userfunc(data) {
     <div id="mainconti">
       <div class="mainq">
         <div class="containeq">
-          <img
-            class="profile-img"
-            src="https://cdn.dribbble.com/users/1223630/screenshots/8115260/media/8145a871d9c4d67ec06e047ccc6574b4.gif"
-          />
+          {data.datas.genders === "male" ? (
+            <img
+              class="profile-img"
+              src="https://media.tenor.com/MFVP5T7W8okAAAAM/natsuya-kirishima-anime.gif"
+            />
+          ) : (
+            <img
+              class="profile-img"
+              src="https://i.pinimg.com/originals/d2/26/d8/d226d8712d3974c1c1f5b3be1e76273b.gif"
+            />
+          )}
+
           <img
             class="background-img"
-            src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg"
+            src="https://gifdb.com/images/high/light-trails-wave-background-r4tz04b0l8kqi6do.gif"
           />
           <p class="name">
             <img
