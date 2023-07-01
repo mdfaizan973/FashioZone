@@ -5,7 +5,9 @@
   flex-direction: column;
   color: #963e7b;
 }
-
+::placeholder {
+  color: #000000 !important;
+}
 .card {
   width: 60rem;
   margin: auto;
