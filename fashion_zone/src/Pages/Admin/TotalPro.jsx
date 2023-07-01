@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TotalPro.css";
 import { Link as RouterLink } from "react-router-dom";
 import "../Styles/Admins.css";
+import axios from "axios";
 export default function TotalPro() {
   return (
     <div>
@@ -33,24 +34,38 @@ export default function TotalPro() {
 
 function ProductsCard() {
   let arr = [1, 2, 3, 4, 5];
+
+  const [data, setData] = useState([]);
+  const getdata = () => {
+    axios
+      .get("http://localhost:8888/mens_data")
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getdata();
+  }, []);
   return (
     <div div id="maincont">
-      {arr.map((ele, i) => (
+      {data.map((ele, i) => (
         <div class="containerr">
           <div class="cardd">
-            <img
-              id="proimgs"
-              src="https://rukminim1.flixcart.com/image/832/832/kkh6zrk0/t-shirt/w/j/n/m-t344hs-whsb-new-eyebogler-original-imafztgjdpkvr8ab.jpeg?q=70"
-            />
+            <img id="proimgs" src={ele.img1} />
 
             <h2 class="card__title">
               Product <span class="card__titleSpan">One</span>
             </h2>
             <div class="card__content">
               <div class="card__features">
-                <p class="card__feature">Feature Number One</p>
-                <p class="card__feature">Feature Number Two</p>
-                <p class="card__feature">Feature Number Tree</p>
+                <p class="card__feature">{ele.title.substring(0, 20)}</p>
+                <p class="card__feature">{ele.name}</p>
+                <p class="card__feature">{ele.gender.toUpperCase()}</p>
+                <p class="card__feature">${ele.price}</p>
               </div>
               <a href="#" class="card__link">
                 Go to Product
