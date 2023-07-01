@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
-// import "../Styles/Admins.css";
+import { AiOutlineDelete } from "react-icons/ai";
 import "./Web.css";
 import axios from "axios";
+import { toast } from "react-toastify";
 export default function WebUser() {
   // let arr = [1, 2, 3, 4, 5, 7, 8];
   const [data, setData] = useState([]);
@@ -42,13 +43,7 @@ export default function WebUser() {
         </div>
         <div id="content">
           {data.map((ele, i) => (
-            <Userfunc
-              key={ele.id}
-              datas={ele}
-              // name={ele.name}
-              // pass={ele.pass}
-              // email={ele.email}
-            />
+            <Userfunc key={ele.id} datas={ele} />
           ))}
         </div>
       </div>
@@ -57,7 +52,9 @@ export default function WebUser() {
 }
 //
 function Userfunc(data) {
-  console.log(data.datas.name);
+  const deleteuser = () => {
+    toast.error("Delete User Successfully");
+  };
   return (
     <div id="mainconti">
       <div class="mainq">
@@ -83,10 +80,15 @@ function Userfunc(data) {
               class="icon"
               src="https://cdn1.iconfinder.com/data/icons/micon-social-pack/512/twitch-512.png"
             />
-            {data.datas.name}
+            {data.datas.name.toUpperCase()}
           </p>
           <p class="bio">Email: {data.datas.email}</p>
-          <p class="bio">Pass: {data.datas.pass}</p>
+          <div id="btnpss">
+            <p class="bio">Password: {data.datas.pass}</p>
+            <button className="dbtn" onClick={deleteuser}>
+              <AiOutlineDelete />
+            </button>
+          </div>
         </div>
       </div>
     </div>
