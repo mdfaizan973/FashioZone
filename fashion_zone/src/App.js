@@ -9,9 +9,7 @@ function App() {
   return (
     <div className="App">
       <ToastContainer position="bottom-center" autoClose={2000} />
-      <Navbars />
       <AllRoutes />
-      <Footer />
     </div>
   );
 }

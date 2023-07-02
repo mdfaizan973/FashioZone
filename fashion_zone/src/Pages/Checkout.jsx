@@ -1,18 +1,22 @@
 import React from "react";
 import "./Styles/Checkout.css";
 import { toast } from "react-toastify";
+import Navbars from "./../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Checkout() {
   const handlecheckout = (e) => {
     e.preventDefault();
     toast.success("Payment successful!");
     let r = setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/home";
 
       return () => r;
     }, 2500);
   };
   return (
     <div>
+      <Navbars />
+
       <div className="mainscreen">
         <div className="card">
           <div className="leftside">
@@ -27,13 +31,20 @@ export default function Checkout() {
               <h1>CheckOut</h1>
               <h2>Payment Information</h2>
               <p>Cardholder Name</p>
-              <input type="text" className="inputbox" name="name" required />
+              <input
+                type="text"
+                className="inputbox"
+                name="name"
+                placeholder="Name"
+                required
+              />
               <p>Card Number</p>
               <input
                 type="number"
                 className="inputbox"
                 name="card_number"
                 id="card_number"
+                placeholder="Card Number"
                 required
               />
 
@@ -42,6 +53,7 @@ export default function Checkout() {
                 className="inputbox"
                 name="card_type"
                 id="card_type"
+                placeholder="Card Type"
                 required
               >
                 <option value="">--Select a Card Type--</option>
@@ -56,6 +68,7 @@ export default function Checkout() {
                   className="inputbox"
                   name="exp_date"
                   id="exp_date"
+                  placeholder="Exp Date"
                   required
                 />
 
@@ -65,6 +78,7 @@ export default function Checkout() {
                   className="inputbox"
                   name="cvv"
                   id="cvv"
+                  placeholder="CVV"
                   required
                 />
               </div>
@@ -76,6 +90,7 @@ export default function Checkout() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

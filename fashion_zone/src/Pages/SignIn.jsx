@@ -11,7 +11,7 @@ export default function SignIn() {
     //   email,
     //   pass,
     // };
-    if (email == "admin_fz@gmail.com" && pass === "hello_admin") {
+    if (email === "admin_fz@gmail.com" && pass === "hello_admin") {
       fetch("http://localhost:8888/admin")
         .then((response) => response.json())
         .then((users) => {
@@ -41,7 +41,7 @@ export default function SignIn() {
           if (user) {
             toast.success("Login successful");
             let st = setTimeout(() => {
-              window.location.href = "/";
+              window.location.href = "/home";
               return () => st;
             }, 1000);
           } else {

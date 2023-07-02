@@ -126,15 +126,21 @@
 }
 
 #functionalaties {
-  /* border: 1px solid red; */
   width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-around;
 }
-#filt_con,
+/* filtring  */
+
+#filt_con {
+  width: 50%;
+}
 #sort_con {
   width: 50%;
+}
+#filtering {
+  width: 30%;
 }
 #sort_con {
   display: flex;
@@ -195,5 +201,9 @@
   .notfoundimg {
     display: flex;
     flex-direction: column;
+  }
+  /* filtring  */
+  #filtering {
+    width: 90%;
   }
 }

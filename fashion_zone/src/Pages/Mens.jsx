@@ -8,16 +8,19 @@ import { BiCartAlt } from "react-icons/bi";
 import { toast } from "react-toastify";
 import SampleProCards from "./Cards/SampleProCards";
 import Prosection from "./Cards/Prosection";
+import Navbars from "../Components/Navbar";
+import Footer from "../Components/Footer";
 export default function Mens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState("");
   const [pagelength, setPagelength] = useState(0);
   const itemshow = 12;
-
-  const getData = (sear, page) => {
+  const getData = (sear, page, filter) => {
+    console.log(filter);
     axios
-      .get("http://localhost:8888/mens_data?gender=mens")
+      .get(`http://localhost:8888/mens_data?gender=mens`)
       .then((res) => {
         setPagelength(res.data.length);
       })
@@ -36,8 +39,8 @@ export default function Mens() {
       });
   };
   useEffect(() => {
-    getData(sear, page);
-  }, [sear, page]);
+    getData(sear, page, filter);
+  }, [sear, page, filter]);
 
   //pagination--
   const total = pagelength;
@@ -54,6 +57,10 @@ export default function Mens() {
   const handleSearch = (e) => {
     const searchedText = e.target.value.toUpperCase();
     setSear(searchedText);
+  };
+  const henaldfilter = (e) => {
+    const filtertext = e.target.value.toUpperCase();
+    setSear(filtertext);
   };
   const filteredData = prod.filter(
     (item) =>
@@ -79,21 +86,29 @@ export default function Mens() {
 
   return (
     <>
+      <Navbars />
       <div id="searchingcon">
-        <h2 className="searstext">SEARCH....</h2>
         <Input
           onChange={handleSearch}
           border={"2px solid black"}
           color={"black"}
           w={"30%"}
-          placeholder="Search...."
+          placeholder="🔍 Search...."
         />
       </div>
       <div id="img_ban">
         <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
       <div id="functionalaties">
-        <div id="filt_con">Filter</div>
+        <div id="filt_con">
+          <select id="filtering" onChange={henaldfilter}>
+            <option value={""}>Fliter by Name</option>
+            <option value={"Shirt"}>Shirt</option>
+            <option value={"TShirt"}>T-Shirt</option>
+            <option value={"Jeans"}>Jeans</option>
+            <option value={"Track Pant"}>Track Pant</option>
+          </select>
+        </div>
         <div id="sort_con">
           <button className="sbutton" onClick={sort_asc}>
             $ High To Low ⬇️
@@ -140,6 +155,7 @@ export default function Mens() {
       </div>
       {/* <Prosection /> */}
       <SampleProCards />
+      <Footer />
     </>
   );
 }
@@ -168,41 +184,43 @@ function ProductsCard(data) {
       });
   };
   return (
-    <>
-      {/* to={`/details/${item.id}`} */}
-      <div id="productscards">
-        <RouterLink>
-          <div className="flipkart-card">
-            <RouterLink to={`/details/${item.id}`}>
-              <img
-                src={item.img1}
-                alt="Product Image"
-                className="product-image"
-              />
-            </RouterLink>
-            <p className="product-title">{item.name}</p>
-            <p className="product-price">${item.price}</p>
-            <div className="product-rating">
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9734;</span>
-              <span className="star">&#9734;</span>
-              <span class="custom-text">Mens</span>
+    <div>
+      <div>
+        {/* to={`/details/${item.id}`} */}
+        <div id="productscards">
+          <RouterLink>
+            <div className="flipkart-card">
+              <RouterLink to={`/details/${item.id}`}>
+                <img
+                  src={item.img1}
+                  alt="Product Image"
+                  className="product-image"
+                />
+              </RouterLink>
+              <p className="product-title">{item.name}</p>
+              <p className="product-price">${item.price}</p>
+              <div className="product-rating">
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9734;</span>
+                <span className="star">&#9734;</span>
+                <span class="custom-text">Mens</span>
+              </div>
+              <p className="product-description">
+                {item.disc.substring(0, 70)}.........
+              </p>
+              <button
+                className="add-to-cart"
+                onClick={() => handle_addto_cart(item.id)}
+              >
+                <BiCartAlt />
+                Add to Cart
+              </button>
             </div>
-            <p className="product-description">
-              {item.disc.substring(0, 70)}.........
-            </p>
-            <button
-              className="add-to-cart"
-              onClick={() => handle_addto_cart(item.id)}
-            >
-              <BiCartAlt />
-              Add to Cart
-            </button>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

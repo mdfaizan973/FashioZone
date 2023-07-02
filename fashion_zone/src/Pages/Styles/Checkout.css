@@ -5,7 +5,9 @@
   flex-direction: column;
   color: #963e7b;
 }
-
+::placeholder {
+  color: #222222 !important;
+}
 .card {
   width: 60rem;
   margin: auto;
@@ -64,6 +66,7 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
   outline: none;
+  background-color: white;
 }
 
 .expcvv {
