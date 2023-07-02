@@ -57,6 +57,10 @@ export default function Womens() {
     const searchedText = e.target.value.toUpperCase();
     setSear(searchedText);
   };
+  const henaldfilter = (e) => {
+    const filtertext = e.target.value.toUpperCase();
+    setSear(filtertext);
+  };
   const filteredData = prod.filter(
     (item) =>
       // return (
@@ -97,7 +101,15 @@ export default function Womens() {
         <img src="https://olavi.in/cdn/shop/files/Banner_olavi_1944x.jpg?v=1665663372" />
       </div>
       <div id="functionalaties">
-        <div id="filt_con">Filter</div>
+        <div id="filt_con">
+          <select id="filtering" onChange={henaldfilter}>
+            <option value={""}>Fliter by Name</option>
+            <option value={"Shirt"}>Shirt</option>
+            <option value={"TShirt"}>T-Shirt</option>
+            <option value={"Jeans"}>Jeans</option>
+            <option value={"Track Pant"}>Track Pant</option>
+          </select>
+        </div>
         <div id="sort_con">
           <button className="sbutton" onClick={sort_asc}>
             $ High To Low ⬇️
