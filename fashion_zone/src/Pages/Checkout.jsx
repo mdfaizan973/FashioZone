@@ -31,13 +31,20 @@ export default function Checkout() {
               <h1>CheckOut</h1>
               <h2>Payment Information</h2>
               <p>Cardholder Name</p>
-              <input type="text" className="inputbox" name="name" required />
+              <input
+                type="text"
+                className="inputbox"
+                name="name"
+                placeholder="Name"
+                required
+              />
               <p>Card Number</p>
               <input
                 type="number"
                 className="inputbox"
                 name="card_number"
                 id="card_number"
+                placeholder="Card Number"
                 required
               />
 
@@ -46,6 +53,7 @@ export default function Checkout() {
                 className="inputbox"
                 name="card_type"
                 id="card_type"
+                placeholder="Card Type"
                 required
               >
                 <option value="">--Select a Card Type--</option>
@@ -60,6 +68,7 @@ export default function Checkout() {
                   className="inputbox"
                   name="exp_date"
                   id="exp_date"
+                  placeholder="Exp Date"
                   required
                 />
 
@@ -69,6 +78,7 @@ export default function Checkout() {
                   className="inputbox"
                   name="cvv"
                   id="cvv"
+                  placeholder="CVV"
                   required
                 />
               </div>

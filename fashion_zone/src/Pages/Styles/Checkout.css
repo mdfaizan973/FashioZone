@@ -6,7 +6,7 @@
   color: #963e7b;
 }
 ::placeholder {
-  color: #000000 !important;
+  color: #222222 !important;
 }
 .card {
   width: 60rem;
@@ -66,6 +66,7 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
   outline: none;
+  background-color: white;
 }
 
 .expcvv {

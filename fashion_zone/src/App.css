@@ -1,3 +1,9 @@
+body {
+  font-family: Arial, sans-serif !important;
+}
+.App {
+  font-family: Arial, sans-serif !important;
+}
 .sidebar {
   width: 250px;
   height: 100vh;

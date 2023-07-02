@@ -24,7 +24,6 @@ export default function Form() {
             <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
-            <option value="other">Other</option>
           </select>
         </div>
 
@@ -35,7 +34,13 @@ export default function Form() {
 
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Name" />
+          <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="shirt">Shirt</option>
+            <option value="tshirt">TShirt</option>
+            <option value="jeans">Jeans</option>
+            <option value="track pant">Track Pant</option>
+          </select>
         </div>
 
         <div class="form-group">
