@@ -462,13 +462,6 @@
       "pass": "mus123",
       "genders": "female",
       "id": 7
-    },
-    {
-      "name": "Danish",
-      "email": "dan@gmail.com",
-      "pass": "dan123",
-      "genders": "male",
-      "id": 8
     }
   ]
 }

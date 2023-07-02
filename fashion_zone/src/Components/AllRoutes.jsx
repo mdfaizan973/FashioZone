@@ -13,6 +13,7 @@ import Admin from "../Pages/Admin";
 import Faizan from "../Pages/Admin/Faizan";
 import WebUser from "../Pages/Admin/WebUser";
 import TotalPro from "../Pages/Admin/TotalPro";
+import EditData from "./../Pages/Admin/EditData";
 export default function AllRoutes() {
   return (
     <div>
@@ -29,6 +30,7 @@ export default function AllRoutes() {
         <Route path="/faizan" element={<Faizan />}></Route>
         <Route path="/adminuser" element={<WebUser />}></Route>
         <Route path="/allprod" element={<TotalPro />}></Route>
+        <Route path="/edit" element={<EditData />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>
