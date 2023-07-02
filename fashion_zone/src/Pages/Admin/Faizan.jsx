@@ -1,12 +1,11 @@
 import React from "react";
-
 import { Link as RouterLink } from "react-router-dom";
-import "../Styles/Admins.css";
+import "./Faizan.css";
 export default function Faizan() {
   return (
     <div>
-      <div id="main_container">
-        <div id="sidebar">
+      <div id="main_container_cc">
+        <div id="sidebar_rr">
           <h1>Admin Dashboard</h1>
           <ul>
             <RouterLink to="/adminpanel">
@@ -23,8 +22,18 @@ export default function Faizan() {
             </RouterLink>
           </ul>
         </div>
-        <div id="content">Faizan</div>
+        <div id="content">
+          <Faizancard />
+        </div>
       </div>
     </div>
+  );
+}
+
+function Faizancard() {
+  return (
+    <>
+      <div>Hello</div>
+    </>
   );
 }

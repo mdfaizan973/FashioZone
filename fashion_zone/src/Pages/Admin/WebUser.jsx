@@ -52,9 +52,19 @@ export default function WebUser() {
 }
 //
 function Userfunc(data) {
-  const deleteuser = () => {
-    toast.error("Delete User Successfully");
+  const deleteuser = (id) => {
+    axios
+      .delete(`http://localhost:8888/users/${id}`)
+      .then((res) => {
+        toast.error("Delete User Successfully");
+        window.location.reload();
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
   return (
     <div id="mainconti">
       <div class="mainq">
@@ -85,7 +95,7 @@ function Userfunc(data) {
           <p class="bio">Email: {data.datas.email}</p>
           <div id="btnpss">
             <p class="bio">Password: {data.datas.pass}</p>
-            <button className="dbtn" onClick={deleteuser}>
+            <button className="dbtn" onClick={() => deleteuser(data.datas.id)}>
               <AiOutlineDelete />
             </button>
           </div>
