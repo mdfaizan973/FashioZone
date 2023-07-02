@@ -26,9 +26,7 @@ export default function TotalPro() {
           </ul>
         </div>
         <div id="contentaa">
-          {/* {arr.map((ele, i) => ( */}
           <ProductsCard />
-          {/* ))} */}
         </div>
       </div>
     </div>
