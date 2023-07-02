@@ -77,8 +77,10 @@ function ProductsCard() {
                 <p class="card__feature">$ {ele.price}</p>
               </div>
               <div id="btngrp">
-                <a href="/edit" class="card__link" id="edits">
-                  <FiEdit />
+                <a class="card__link" id="edits">
+                  <RouterLink to={`/edit/${ele.id}`}>
+                    <FiEdit />
+                  </RouterLink>
                 </a>
                 <button onClick={() => handledelete(ele.id)} class="card__link">
                   <FiDelete />

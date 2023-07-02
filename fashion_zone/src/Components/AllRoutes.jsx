@@ -30,7 +30,7 @@ export default function AllRoutes() {
         <Route path="/faizan" element={<Faizan />}></Route>
         <Route path="/adminuser" element={<WebUser />}></Route>
         <Route path="/allprod" element={<TotalPro />}></Route>
-        <Route path="/edit" element={<EditData />}></Route>
+        <Route path="/edit/:id" element={<EditData />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>

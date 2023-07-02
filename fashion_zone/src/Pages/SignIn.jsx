@@ -12,7 +12,7 @@ export default function SignIn() {
     //   pass,
     // };
     if (email === "admin_fz@gmail.com" && pass === "hello_admin") {
-      fetch("http://localhost:8888/admin")
+      fetch("http://localhost:8080/admin")
         .then((response) => response.json())
         .then((users) => {
           const user = users.find(
@@ -32,7 +32,7 @@ export default function SignIn() {
           console.error("Error:", error);
         });
     } else {
-      fetch("http://localhost:8888/users")
+      fetch("http://localhost:8080/users")
         .then((response) => response.json())
         .then((users) => {
           const user = users.find(
