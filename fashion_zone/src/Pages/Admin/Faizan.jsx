@@ -89,6 +89,7 @@ function Faizancard() {
           </div>
         </div>
         <div id="details_card">
+          <h1>About</h1>
           <p>
             A Full-Stack Web Developer specializing in MERN Stack with good
             proficiency in HTML, CSS, JS, ReactJS, Redux, NodeJS, ExpressJS,
@@ -98,7 +99,7 @@ function Faizancard() {
             forward to working as an accountable and competent professional in
             an exciting tech organization.
           </p>
-          <h2>Skills</h2>
+          <h1>Skills</h1>
           <ul class="developer-skills">
             <li>HTML</li>
             <li>CSS</li>
@@ -116,7 +117,7 @@ function Faizancard() {
             <li>Python</li>
             <li>Data structure and Algorithm (DSA)</li>
           </ul>
-          <h2>Tools</h2>
+          <h1>Tools</h1>
           <ul class="developer-skills">
             <li>VS Code</li>
             <li>CodePen</li>
