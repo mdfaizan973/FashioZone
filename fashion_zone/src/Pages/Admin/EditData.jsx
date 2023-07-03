@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Edit.css";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function EditData() {
   return (
@@ -40,6 +42,7 @@ function Edit_Pro_data() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [disc, setDisc] = useState("");
+  const { id } = useParams();
   let obj = {
     img1,
     img2,
@@ -50,8 +53,30 @@ function Edit_Pro_data() {
     price,
     disc,
   };
+
   const handlesubmit = () => {
-    console.log(obj);
+    if (
+      obj.img1 === "" ||
+      obj.img2 === "" ||
+      obj.img3 === "" ||
+      obj.gender === "" ||
+      obj.title === "" ||
+      obj.name === "" ||
+      obj.price === "" ||
+      obj.disc === ""
+    ) {
+      toast.error("Fill all the boxes");
+      return;
+    } else {
+      axios
+        .patch(`http://localhost:8080/web_data/${id}`, obj)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   return (
     <>
