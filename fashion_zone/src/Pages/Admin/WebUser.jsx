@@ -42,7 +42,7 @@ export default function WebUser() {
           </ul>
         </div>
         <div id="content">
-          {data.map((ele, i) => (
+          {data.reverse().map((ele, i) => (
             <Userfunc key={ele.id} datas={ele} />
           ))}
         </div>
