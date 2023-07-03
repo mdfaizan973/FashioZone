@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TotalPro.css";
 import { Link as RouterLink } from "react-router-dom";
-// import "../Styles/Admins.css";
+import { FiEdit, FiDelete } from "react-icons/fi";
 import axios from "axios";
 export default function TotalPro() {
   let arr = [1, 2, 3, 4, 5];
@@ -26,9 +26,7 @@ export default function TotalPro() {
           </ul>
         </div>
         <div id="contentaa">
-          {/* {arr.map((ele, i) => ( */}
           <ProductsCard />
-          {/* ))} */}
         </div>
       </div>
     </div>
@@ -39,7 +37,7 @@ function ProductsCard() {
   const [data, setData] = useState([]);
   const getdata = () => {
     axios
-      .get("http://localhost:8888/mens_data")
+      .get("http://localhost:8080/web_data")
       .then((res) => {
         // console.log(res.data);
         setData(res.data);
@@ -51,6 +49,19 @@ function ProductsCard() {
   useEffect(() => {
     getdata();
   }, []);
+
+  const handledelete = (id) => {
+    axios
+      .delete(`http://localhost:8080/web_data/${id}`)
+      .then((res) => {
+        // console.log(res.data);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div div id="maincont">
       {data.map((ele, i) => (
@@ -65,9 +76,16 @@ function ProductsCard() {
                 <p class="card__feature">{ele.name}</p>
                 <p class="card__feature">$ {ele.price}</p>
               </div>
-              <a href="#" class="card__link">
-                Go to Product
-              </a>
+              <div id="btngrp">
+                <a class="card__link" id="edits">
+                  <RouterLink to={`/edit/${ele.id}`}>
+                    <FiEdit />
+                  </RouterLink>
+                </a>
+                <button onClick={() => handledelete(ele.id)} class="card__link">
+                  <FiDelete />
+                </button>
+              </div>
             </div>
           </div>
         </div>

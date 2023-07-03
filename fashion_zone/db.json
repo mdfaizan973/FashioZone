@@ -13,12 +13,12 @@
     },
     {
       "img1": "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/r/i/v/xxl-aks-0150-ausk-original-imagk4nyd4c4hwug.jpeg?q=70",
-      "img2": "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/9/e/o/s-ausk0150-ausk-original-imaghr29d7cupn67.jpeg?q=70",
-      "img3": "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/b/i/i/xxl-aks-0155-ausk-original-imagk4nyjunaww5y.jpeg?q=70",
+      "img2": "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/b/i/i/xxl-aks-0155-ausk-original-imagk4nyjunaww5y.jpeg?q=70",
+      "img3": "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/9/e/o/s-ausk0150-ausk-original-imaghr29d7cupn67.jpeg?q=70",
       "gender": "mens",
       "title": "Men Colorblock Round Neck Cotton Blend Blue T-Shirt",
       "name": "TShirt",
-      "price": "33",
+      "price": "58",
       "disc": "Stay cool and comfortable during your workouts with our athletic performance t-shirts. Designed with moisture-wicking technology, these t-shirts keep you dry by pulling sweat away from your body. The lightweight and breathable fabric provide maximum airflow, allowing you to stay focused and perform at your best. With their ergonomic design and stretchy material, these t-shirts offer a full range of motion, making them perfect for activities like running, gym workouts, or sports. Elevate your athletic wardrobe with these high-performance t-shirts.",
       "id": 2
     },
@@ -340,20 +340,42 @@
       "price": "70",
       "disc": "Experience comfort and style with our athletic track pants. Made from high-quality performance fabric, these track pants are designed to keep up with your active lifestyle. The moisture-wicking technology keeps you dry and comfortable during workouts or sports activities. The elastic waistband with an adjustable drawstring ensures a secure and personalized fit. With their tapered design and ribbed cuffs, these track pants offer a modern and athletic look. They feature side pockets to conveniently store small essentials. Whether you're hitting the gym, going for a run, or simply running errands, our athletic track pants are the perfect choice for both performance and style.",
       "id": 31
+    },
+    {
+      "img1": "https://cdn.shopify.com/s/files/1/0752/6435/products/IMG_0043_4d81c6fa-5783-4baa-81f2-43b183e05466_765x.jpg?v=1674813294",
+      "img2": "https://cdn.shopify.com/s/files/1/0752/6435/products/IMG_0050_9255e69b-cddb-44cc-b6e9-567fc16a1302_160x.jpg?v=1674813307",
+      "img3": "https://cdn.shopify.com/s/files/1/0752/6435/products/IMG_0059_1b03b3bb-3cf7-4773-8cbb-40473bdc8828_160x.jpg?v=1674813298",
+      "gender": "mens",
+      "title": "VIBRANT FLORAL PRINT SHIRT",
+      "name": "Shirt",
+      "price": "55",
+      "disc": "A premium printed shirt in flowy fabric. Regular collar. Short sleeve. Button fastening on the front section.\n\n-A bold printed short sleeve shirt.\n-Can be worn for casual outings.\n-Liked by Father and Son age groups\n-Regular collar\n-100% Viscose printed fabric\n-Short Sleeves.\n-Tailored Fit / Perfected pattern after extensive research on body measurements.\n-Hand Wash - For detailed instructions- follow the wash-care label on the garment.\n-Can be paired with Rare Rabbit Trousers.",
+      "id": 32
+    },
+    {
+      "img1": "https://cdn.shopify.com/s/files/1/0752/6435/files/IMG_0013_62b7dfa1-924d-4306-80bf-c5b01f607bca_765x.jpg?v=1688020105",
+      "img2": "https://cdn.shopify.com/s/files/1/0752/6435/files/IMG_0015_62a9810f-dca8-4546-9ebd-fffa93485401_160x.jpg?v=1688020106",
+      "img3": "https://cdn.shopify.com/s/files/1/0752/6435/files/IMG_0025_d2bb5a6c-4975-4b1e-8678-db1ef82517fd_160x.jpg?v=1688037503",
+      "gender": "mens",
+      "title": "SMART CARGO PANTS",
+      "name": "Jeans",
+      "price": "77",
+      "disc": "- Stay comfortable and stylish on any occasion with these beige slim fit trousers from RARE RABBIT.\n\n- Crafted of a polyester-cotton blend, the bellow pocket cargo pants feature 6 pocket detailing for convenience.\n\n- The perfect combination of form and function.",
+      "id": 33
+    },
+    {
+      "img1": "https://images.bewakoof.com/t1080/women-s-white-attempting-to-adult-graphic-printed-oversized-t-shirt-530393-1682403578-1.jpg",
+      "img2": "https://images.bewakoof.com/original/women-s-white-attempting-to-adult-graphic-printed-oversized-t-shirt-530393-1682403584-2.jpg",
+      "img3": "https://images.bewakoof.com/t96/women-s-white-attempting-to-adult-graphic-printed-oversized-t-shirt-530393-1682403600-5.jpg",
+      "gender": "womens",
+      "title": "Women's White Attempting To Adult Graphic Printed Oversized T-shirt",
+      "name": "TShirt",
+      "price": "88",
+      "disc": "Our girls' t-shirt features a vibrant and eye-catching design that adds a playful flair to any outfit. Whether it's a cute animal motif, a trendy graphic print, or a charming pattern, we offer a wide variety of options to suit every girl's unique style. Let her express her personality and stand out from the crowd with our carefully curated designs.",
+      "id": 34
     }
   ],
   "cart": [
-    {
-      "img1": "https://olavi.in/cdn/shop/products/mustard_360x.png?v=1677216708",
-      "img2": "https://olavi.in/cdn/shop/products/M7A1384_120x.jpg?v=1677216708",
-      "img3": "https://olavi.in/cdn/shop/products/M7A1379_120x.jpg?v=1677216708",
-      "gender": "mens",
-      "title": "HONEY MUSTARD - MENS HALF SLEEVES T- SHIRT",
-      "name": "Jeans",
-      "price": "111",
-      "disc": "Discover our slim fit denim jeans, the perfect blend of style and comfort. Made from high-quality denim fabric, these jeans offer a modern and flattering fit. The slim cut sits close to the body without feeling restrictive. With their versatile design, they can be dressed up or down for various occasions. Pair them with a casual t-shirt and sneakers for a laid-back look, or dress them up with a button-up shirt and dress shoes for a more polished ensemble. These jeans feature classic five-pocket styling and are available in different washes to suit your preference. Upgrade your denim collection with our slim fit jeans and experience timeless style and exceptional comfort.",
-      "id": 12
-    },
     {
       "img1": "https://rukminim1.flixcart.com/image/128/128/xif0q/track-pant/3/g/f/4xl-wm19-jog-basic-fern-alan-jones-original-imagmeqbf6hnehx8.jpeg?q=70",
       "img2": "https://rukminim1.flixcart.com/image/128/128/xif0q/track-pant/b/m/a/4xl-wm19-jog-basic-fern-alan-jones-original-imagmeqbxqfn4ges.jpeg?q=70",
@@ -377,15 +399,15 @@
       "id": 3
     },
     {
-      "img1": "https://olavi.in/cdn/shop/products/2_17c61faa-6631-494b-af29-4e2ce5b11a4e_360x.jpg?v=1675448338",
-      "img2": "https://olavi.in/cdn/shop/products/59_1800x1800_7e01be08-b3c8-487d-9b85-111980959ea5_120x.jpg?v=1676283538",
-      "img3": "https://olavi.in/cdn/shop/products/59_1800x1800_7e01be08-b3c8-487d-9b85-111980959ea5_120x.jpg?v=1676283538",
+      "img1": "https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/b/k/m/xxl-255-j-turritopsis-original-imagprxenfthnzpj.jpeg?q=70",
+      "img2": "https://rukminim1.flixcart.com/image/128/128/xif0q/shirt/e/u/j/xxl-255-j-turritopsis-original-imagprxezzcgeteg.jpeg?q=70",
+      "img3": "https://rukminim1.flixcart.com/image/128/128/xif0q/shirt/m/n/c/xxl-255-j-turritopsis-original-imagprxebsk6tzve.jpeg?q=70",
       "gender": "womens",
-      "title": "BOO PRINTED CROP TOP",
-      "name": "TShirt",
-      "price": "43",
-      "disc": "Stay cool and comfortable during your workouts with our athletic performance t-shirts. Designed with moisture-wicking technology, these t-shirts keep you dry by pulling sweat away from your body. The lightweight and breathable fabric provide maximum airflow, allowing you to stay focused and perform at your best. With their ergonomic design and stretchy material, these t-shirts offer a full range of motion, making them perfect for activities like running, gym workouts, or sports. Elevate your athletic wardrobe with these high-performance t-shirts.",
-      "id": 15
+      "title": "Women Boxy Fit Solid Lapel Collar Casual Shirt",
+      "name": "Shirt",
+      "price": "55",
+      "disc": "Upgrade your wardrobe with our classic button-up shirt. Crafted from premium cotton fabric, this shirt offers a sophisticated and timeless look. The crisp collar and long sleeves provide a polished appearance, making it suitable for both formal and casual occasions. With its regular fit and comfortable feel, it offers all-day comfort and ease of movement. The button-up front allows for adjustable ventilation and styling options. Pair it with dress pants for a professional look or wear it untucked with jeans for a more relaxed vibe. Versatile and stylish, this classic button-up shirt is a must-have in every wardrobe.",
+      "id": 18
     }
   ],
   "admin": [
@@ -424,20 +446,44 @@
     {
       "name": "Alqma",
       "email": "ak@gmail.com",
+      "genders": "male",
       "pass": "ak47",
       "id": 1
     },
     {
-      "name": "NADIM",
-      "email": "nad@gmail.com",
-      "pass": "nad12",
+      "name": "Anushka",
+      "email": "anku@gmail.com",
+      "genders": "female",
+      "pass": "anku22",
       "id": 2
     },
     {
       "name": "Faizan",
       "email": "faizan@gmail.com",
+      "genders": "male",
       "pass": "fz123",
-      "id": 3
+      "id": 4
+    },
+    {
+      "name": "Mitali raj",
+      "email": "mitali@gmail.com",
+      "pass": "mit123",
+      "genders": "female",
+      "id": 5
+    },
+    {
+      "name": "mahfooz",
+      "email": "maifi@gmail.com",
+      "pass": "mahfi123",
+      "genders": "male",
+      "id": 6
+    },
+    {
+      "name": "muskan",
+      "email": "muskan@gmail.com",
+      "pass": "mus123",
+      "genders": "female",
+      "id": 7
     }
   ]
 }

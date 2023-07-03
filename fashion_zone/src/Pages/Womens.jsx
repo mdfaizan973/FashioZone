@@ -14,12 +14,13 @@ export default function Womens() {
   const [prod, setProd] = useState([]);
   const [sear, setSear] = useState("");
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState("");
   const [pagelength, setPagelength] = useState(0);
   const itemshow = 12;
-
-  const getData = (sear, page) => {
+  const getData = (sear, page, filter) => {
+    console.log(filter);
     axios
-      .get("http://localhost:8888/mens_data?gender=womens")
+      .get(`http://localhost:8080/web_data?gender=womens`)
       .then((res) => {
         setPagelength(res.data.length);
       })
@@ -28,7 +29,7 @@ export default function Womens() {
       });
     axios
       .get(
-        `http://localhost:8888/mens_data?gender=womens&_limit=${itemshow}&_page=${page}`
+        `http://localhost:8080/web_data?gender=womens&_limit=${itemshow}&_page=${page}`
       )
       .then((res) => {
         setProd(res.data);
@@ -38,8 +39,8 @@ export default function Womens() {
       });
   };
   useEffect(() => {
-    getData(sear, page);
-  }, [sear, page]);
+    getData(sear, page, filter);
+  }, [sear, page, filter]);
 
   //pagination--
   const total = pagelength;
@@ -86,19 +87,17 @@ export default function Womens() {
   return (
     <>
       <Navbars />
-
       <div id="searchingcon">
-        <h2 className="searstext">SEARCH....</h2>
         <Input
           onChange={handleSearch}
           border={"2px solid black"}
           color={"black"}
           w={"30%"}
-          placeholder="Search...."
+          placeholder="🔍 Search...."
         />
       </div>
       <div id="img_ban">
-        <img src="https://olavi.in/cdn/shop/files/Banner_olavi_1944x.jpg?v=1665663372" />
+        <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
       </div>
       <div id="functionalaties">
         <div id="filt_con">
@@ -185,41 +184,43 @@ function ProductsCard(data) {
       });
   };
   return (
-    <>
-      {/* to={`/details/${item.id}`} */}
-      <div id="productscards">
-        <RouterLink>
-          <div className="flipkart-card">
-            <RouterLink to={`/details/${item.id}`}>
-              <img
-                src={item.img1}
-                alt="Product Image"
-                className="product-image"
-              />
-            </RouterLink>
-            <p className="product-title">{item.name}</p>
-            <p className="product-price">${item.price}</p>
-            <div className="product-rating">
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9734;</span>
-              <span className="star">&#9734;</span>
-              <span class="custom-text">{item.gender}</span>
+    <div>
+      <div>
+        {/* to={`/details/${item.id}`} */}
+        <div id="productscards">
+          <RouterLink>
+            <div className="flipkart-card">
+              <RouterLink to={`/details/${item.id}`}>
+                <img
+                  src={item.img1}
+                  alt="Product Image"
+                  className="product-image"
+                />
+              </RouterLink>
+              <p className="product-title">{item.name}</p>
+              <p className="product-price">${item.price}</p>
+              <div className="product-rating">
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9733;</span>
+                <span className="star">&#9734;</span>
+                <span className="star">&#9734;</span>
+                <span class="custom-text">Mens</span>
+              </div>
+              <p className="product-description">
+                {item.disc.substring(0, 70)}.........
+              </p>
+              <button
+                className="add-to-cart"
+                onClick={() => handle_addto_cart(item.id)}
+              >
+                <BiCartAlt />
+                Add to Cart
+              </button>
             </div>
-            <p className="product-description">
-              {item.disc.substring(0, 70)}.........
-            </p>
-            <button
-              className="add-to-cart"
-              onClick={() => handle_addto_cart(item.id)}
-            >
-              <BiCartAlt />
-              Add to Cart
-            </button>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

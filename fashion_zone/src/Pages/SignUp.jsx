@@ -16,7 +16,7 @@ export default function SignUp() {
       genders,
     };
     axios
-      .post(`http://localhost:8888/users`, obj)
+      .post(`http://localhost:8080/users`, obj)
       .then((res) => {
         console.log(res);
         toast.success("Account Created Successfully");
