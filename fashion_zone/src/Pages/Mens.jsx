@@ -20,7 +20,7 @@ export default function Mens() {
   const getData = (sear, page, filter) => {
     console.log(filter);
     axios
-      .get(`http://localhost:8080/web_data?gender=mens`)
+      .get(`https://fashionzonelink.onrender.com/web_data?gender=mens`)
       .then((res) => {
         setPagelength(res.data.length);
       })
@@ -29,7 +29,7 @@ export default function Mens() {
       });
     axios
       .get(
-        `http://localhost:8080/web_data?gender=mens&_limit=${itemshow}&_page=${page}`
+        `https://fashionzonelink.onrender.com/web_data?gender=mens&_limit=${itemshow}&_page=${page}`
       )
       .then((res) => {
         setProd(res.data);

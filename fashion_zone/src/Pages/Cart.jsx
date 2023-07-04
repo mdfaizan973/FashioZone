@@ -13,7 +13,7 @@ export default function Cart() {
 
   const getcartdata = () => {
     axios
-      .get(`http://localhost:8080/cart`)
+      .get(`https://fashionzonelink.onrender.com/cart`)
       .then((res) => {
         setCart_Pro(res.data);
       })
@@ -24,7 +24,7 @@ export default function Cart() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8080/cart/${id}`)
+      .delete(`https://fashionzonelink.onrender.com/cart/${id}`)
       .then((res) => {
         console.log(res);
         window.location.reload();

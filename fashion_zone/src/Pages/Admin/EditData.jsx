@@ -69,7 +69,7 @@ function Edit_Pro_data() {
       return;
     } else {
       axios
-        .patch(`http://localhost:8080/web_data/${id}`, obj)
+        .patch(`https://fashionzonelink.onrender.com/web_data/${id}`, obj)
         .then((res) => {
           console.log(res);
         })

@@ -9,7 +9,7 @@ export default function WebUser() {
   const [data, setData] = useState([]);
   const getdata = () => {
     axios
-      .get("http://localhost:8080/users")
+      .get("https://fashionzonelink.onrender.com/users")
       .then((res) => {
         // console.log(res.data);
         setData(res.data);
