@@ -103,7 +103,7 @@ export default function Form() {
             onChange={(e) => setName(e.target.value)}
             required
           >
-            <option value="">Select Gender</option>
+            <option value="">Select Name</option>
             <option value="Shirt">Shirt</option>
             <option value="TShirt">TShirt</option>
             <option value="Jeans">Jeans</option>

@@ -64,7 +64,7 @@ function ProductsCard() {
 
   return (
     <div div id="maincont">
-      {data.map((ele, i) => (
+      {data.reverse().map((ele, i) => (
         <div class="containerr">
           <div class="cardd">
             <img id="proimgs" src={ele.img1} />
@@ -73,7 +73,9 @@ function ProductsCard() {
             <div class="card__content">
               <div class="card__features">
                 <p class="card__feature">{ele.title.substring(0, 20)}</p>
-                <p class="card__feature">{ele.name}</p>
+                <p class="card__feature">
+                  {ele.name} - {ele.gender.toUpperCase()}
+                </p>
                 <p class="card__feature">$ {ele.price}</p>
               </div>
               <div id="btngrp">
