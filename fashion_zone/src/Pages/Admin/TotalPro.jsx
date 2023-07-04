@@ -81,7 +81,13 @@ function ProductsCard() {
               <div id="btngrp">
                 <a class="card__link" id="edits">
                   <RouterLink to={`/edit/${ele.id}`}>
-                    <FiEdit />
+                    {/* <div
+                      onClick={() => {
+                        set;
+                      }}
+                    >
+                      {" "} */}
+                    <FiEdit /> {/* </div> */}
                   </RouterLink>
                 </a>
                 <button onClick={() => handledelete(ele.id)} class="card__link">

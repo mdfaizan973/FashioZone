@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Edit.css";
 import { Link as RouterLink, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -34,8 +34,11 @@ export default function EditData() {
 }
 
 function Edit_Pro_data() {
-  const [img1, setImg1] = useState("");
-  const [img2, setImg2] = useState("");
+  const [edata, setEdata] = useState({});
+  // console.log(edata.iimg1);
+
+  const [iimg1, setIimg1] = useState(edata.img1);
+  const [iimg2, setIimg2] = useState("");
   const [img3, setImg3] = useState("");
   const [gender, setGender] = useState("");
   const [title, setTitle] = useState("");
@@ -44,8 +47,8 @@ function Edit_Pro_data() {
   const [disc, setDisc] = useState("");
   const { id } = useParams();
   let obj = {
-    img1,
-    img2,
+    iimg1,
+    iimg2,
     img3,
     gender,
     title,
@@ -56,8 +59,8 @@ function Edit_Pro_data() {
 
   const handlesubmit = () => {
     if (
-      obj.img1 === "" ||
-      obj.img2 === "" ||
+      obj.iimg1 === "" ||
+      obj.iimg2 === "" ||
       obj.img3 === "" ||
       obj.gender === "" ||
       obj.title === "" ||
@@ -70,14 +73,30 @@ function Edit_Pro_data() {
     } else {
       axios
         .patch(`https://fashionzonelink.onrender.com/web_data/${id}`, obj)
-        .then((res) => {
-          console.log(res);
-        })
+        .then(
+          (res) => console.log("l", res)
+          // setEdata(res.data);
+        )
         .catch((err) => {
           console.log(err);
         });
+
+      // ---------
     }
   };
+
+  useEffect(() => {
+    axios
+      .get(`https://fashionzonelink.onrender.com/web_data/${id}`)
+      .then(
+        (res) => setEdata(res)
+        // setEdata(res.data);
+      )
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  //console.log("y", edata);
   return (
     <>
       <div>
@@ -89,14 +108,15 @@ function Edit_Pro_data() {
           <div class="image-container">
             <input
               type="text"
-              placeholder="Image 1"
-              onChange={(e) => setImg1(e.target.value)}
+              // placeholder="Image 1"
+              value={`${iimg1}`}
+              // onChange={(e) => setIimg1(e.target.value)}
               required
             />
             <input
               type="text"
               placeholder="Image 2"
-              onChange={(e) => setImg2(e.target.value)}
+              onChange={(e) => setIimg2(e.target.value)}
               required
             />
             <input
