@@ -3,7 +3,7 @@ import "./Styles/Carts.css";
 import { BiCartAlt, BiBadgeCheck } from "react-icons/bi";
 import axios from "axios";
 import { HiBackspace } from "react-icons/hi";
-import SampleProCards from "./Cards/SampleProCards";
+import { Link as RouterLink } from "react-router-dom";
 import Navbars from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Prosection from "./Cards/Prosection";
@@ -62,7 +62,9 @@ export default function Cart() {
         {cart_pro.map((ele, i) => (
           <div key={ele.id} className="cart-item">
             <div className="cart-item__image">
-              <img src={ele.img1} alt="Product Image" />
+              <RouterLink to={`/details/${ele.id}`}>
+                <img src={ele.img1} alt="Product Image" />
+              </RouterLink>
             </div>
             <div className="cart-item__details">
               <div className="cart-item__name">{ele.name}</div>
@@ -72,11 +74,11 @@ export default function Cart() {
               <div className="cart-item__price">${ele.price}</div>
               <div className="cart-item__quantity">
                 <div className="cart-item__quantity-controls">
-                  <button disabled={qty === 1} onClick={() => handleClick(-1)}>
+                  {/* <button disabled={qty === 1} onClick={() => handleClick(-1)}>
                     -
                   </button>
                   <div className="cart-item__quantity-value">{qty}</div>
-                  <button onClick={() => handleClick(1)}>+</button>
+                  <button onClick={() => handleClick(1)}>+</button> */}
                 </div>
               </div>
               <div

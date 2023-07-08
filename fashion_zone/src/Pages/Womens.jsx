@@ -166,12 +166,12 @@ function ProductsCard(data) {
   const handle_addto_cart = (id) => {
     toast.success("Product added to cart");
     axios
-      .get(`http://localhost:8888/mens_data/${id}`)
+      .get(`https://fashionzonelink.onrender.com/web_data/${id}`)
       .then((res) => {
         console.log(res.data);
         // cartval(res.data);
         axios
-          .post(`http://localhost:8888/cart`, res.data)
+          .post(`https://fashionzonelink.onrender.com/cart`, res.data)
           .then((rest) => {
             console.log("cartd", rest.data);
           })
