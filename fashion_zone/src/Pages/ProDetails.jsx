@@ -12,7 +12,7 @@ export default function ProDetails() {
   // console.log(id);
   const getData = () => {
     axios
-      .get(`http://localhost:8080/web_data/${id}`)
+      .get(`https://fashionzonelink.onrender.com/web_data/${id}`)
       .then((res) => {
         // console.log(res.data);
         setDatadetails(res.data);
@@ -27,12 +27,12 @@ export default function ProDetails() {
   const handleaddcart = () => {
     toast.success("Products added to cart");
     axios
-      .get(`http://localhost:8080/web_data/${id}`)
+      .get(`https://fashionzonelink.onrender.com/web_data/${id}`)
       .then((res) => {
         console.log(res.data);
         // cartval(res.data);
         axios
-          .post(`http://localhost:8080/cart`, res.data)
+          .post(`https://fashionzonelink.onrender.com/cart`, res.data)
           .then((rest) => {
             console.log("cartd", rest.data);
           })

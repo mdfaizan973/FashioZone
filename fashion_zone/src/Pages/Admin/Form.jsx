@@ -36,7 +36,7 @@ export default function Form() {
       return;
     } else {
       axios
-        .post("http://localhost:8080/web_data", obj)
+        .post("https://fashionzonelink.onrender.com/web_data", obj)
         .then((res) => {
           // console.log(res);
           toast("Data Added Successfully");

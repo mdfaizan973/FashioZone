@@ -20,7 +20,7 @@ export default function Womens() {
   const getData = (sear, page, filter) => {
     console.log(filter);
     axios
-      .get(`http://localhost:8080/web_data?gender=womens`)
+      .get(`https://fashionzonelink.onrender.com/web_data?gender=womens`)
       .then((res) => {
         setPagelength(res.data.length);
       })
@@ -29,7 +29,7 @@ export default function Womens() {
       });
     axios
       .get(
-        `http://localhost:8080/web_data?gender=womens&_limit=${itemshow}&_page=${page}`
+        `https://fashionzonelink.onrender.com/web_data?gender=womens&_limit=${itemshow}&_page=${page}`
       )
       .then((res) => {
         setProd(res.data);
@@ -166,12 +166,12 @@ function ProductsCard(data) {
   const handle_addto_cart = (id) => {
     toast.success("Product added to cart");
     axios
-      .get(`http://localhost:8888/mens_data/${id}`)
+      .get(`https://fashionzonelink.onrender.com/web_data/${id}`)
       .then((res) => {
         console.log(res.data);
         // cartval(res.data);
         axios
-          .post(`http://localhost:8888/cart`, res.data)
+          .post(`https://fashionzonelink.onrender.com/cart`, res.data)
           .then((rest) => {
             console.log("cartd", rest.data);
           })

@@ -37,7 +37,7 @@ function ProductsCard() {
   const [data, setData] = useState([]);
   const getdata = () => {
     axios
-      .get("http://localhost:8080/web_data")
+      .get("https://fashionzonelink.onrender.com/web_data")
       .then((res) => {
         // console.log(res.data);
         setData(res.data);
@@ -52,7 +52,7 @@ function ProductsCard() {
 
   const handledelete = (id) => {
     axios
-      .delete(`http://localhost:8080/web_data/${id}`)
+      .delete(`https://fashionzonelink.onrender.com/web_data/${id}`)
       .then((res) => {
         // console.log(res.data);
         window.location.reload();
@@ -81,7 +81,13 @@ function ProductsCard() {
               <div id="btngrp">
                 <a class="card__link" id="edits">
                   <RouterLink to={`/edit/${ele.id}`}>
-                    <FiEdit />
+                    {/* <div
+                      onClick={() => {
+                        set;
+                      }}
+                    >
+                      {" "} */}
+                    <FiEdit /> {/* </div> */}
                   </RouterLink>
                 </a>
                 <button onClick={() => handledelete(ele.id)} class="card__link">
