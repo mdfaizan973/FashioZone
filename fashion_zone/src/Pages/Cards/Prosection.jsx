@@ -7,13 +7,13 @@ export default function Prosection() {
     {
       image:
         "https://olavi.in/cdn/shop/collections/Men_oversize_tshirt_540x.jpg?v=1673349126",
-      name: "MENS OVERSIZED TEES",
+      name: "MENS OVERSIZED",
       dis: "/mens",
     },
     {
       image:
         "https://olavi.in/cdn/shop/collections/Women_oversize_540x.jpg?v=1673349166",
-      name: "WOMENS OVERSIZED TEES",
+      name: "WOMENS OVERSIZED",
       dis: "/womens",
     },
     {
@@ -31,13 +31,13 @@ export default function Prosection() {
     {
       image:
         "https://rukminim1.flixcart.com/image/832/832/l3es13k0/track-pant/7/h/q/s-cargo-jerkyn-original-imagegqvz6zm5hrq.jpeg?q=70",
-      name: "MENS OVERSIZED TEES",
+      name: "MENS OVERSIZED",
       dis: "/mens",
     },
     {
       image:
         "https://rukminim1.flixcart.com/image/832/832/l23mhzk0/t-shirt/c/f/f/m-ldt-003-swaggerjns-original-imagdgs7pgwwqyas.jpeg?q=70",
-      name: "WOMENS OVERSIZED TEES",
+      name: "WOMENS OVERSIZED",
       dis: "/womens",
     },
     {
