@@ -36,6 +36,14 @@ Objective:
 
 `Collaborate with reputable brands: We seek to partner with established clothing brands and designers to expand our product range and offer exclusive collections that align with our customers' preferences.`
 
+
+
 `Expand our customer base: Through effective marketing strategies and social media presence, we aim to reach a wider audience and attract fashion-conscious individuals from different demographics and geographic locations.`
 
 `By achieving these objectives, Fashion Zone aspires to become a go-to online destination for fashion enthusiasts, providing them with an unparalleled shopping experience and a diverse selection of stylish clothing options.`
+
+# Home_Page 👋
+
+![Screenshot (1494)](https://github.com/mdfaizan973/FashioZone/assets/106812942/a6928f13-a65b-4424-90db-14316334cc87)
+
+
