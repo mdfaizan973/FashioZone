@@ -46,4 +46,26 @@ Objective:
 
 ![Screenshot (1494)](https://github.com/mdfaizan973/FashioZone/assets/106812942/a6928f13-a65b-4424-90db-14316334cc87)
 
+# LogIn_Page
+
+![Screenshot (1495)](https://github.com/mdfaizan973/FashioZone/assets/106812942/f83d987a-b957-4ce2-99b2-036a2387d14f)
+
+# Products_Page
+
+![Screenshot (1496)](https://github.com/mdfaizan973/FashioZone/assets/106812942/49800b36-7aca-4d3f-acd8-adf7fa45d8cd)
+![Screenshot (1500)](https://github.com/mdfaizan973/FashioZone/assets/106812942/450403ce-4421-4239-9b66-bea1d369a7d3)
+
+# Products_Details_Page
+
+![Screenshot (1501)](https://github.com/mdfaizan973/FashioZone/assets/106812942/a2d79230-3589-432e-8a99-9c3930af6fb3)
+![Screenshot (1502)](https://github.com/mdfaizan973/FashioZone/assets/106812942/585cc061-9573-4356-b92e-0056fda1da4f)
+
+# Cart_Page
+
+![Screenshot (1503)](https://github.com/mdfaizan973/FashioZone/assets/106812942/7ba002a9-6589-4041-9adf-cba9944f6270)
+![Screenshot (1504)](https://github.com/mdfaizan973/FashioZone/assets/106812942/76f0468b-45b0-43f2-8aec-b762111cd0af)
+
+# Checkout_Page
+
+![Screenshot (1505)](https://github.com/mdfaizan973/FashioZone/assets/106812942/475cb63d-d75e-4529-b5a4-161566c27e47)
 
