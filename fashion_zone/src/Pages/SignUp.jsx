@@ -26,8 +26,8 @@ export default function SignUp() {
       });
   };
   return (
-    <div>
-      <div id="body">
+    <div id="hello">
+      <div id="bodys">
         <div className="signin-container">
           <div className="login-logo"></div>
 

@@ -54,7 +54,7 @@ export default function WebUser() {
 function Userfunc(data) {
   const deleteuser = (id) => {
     axios
-      .delete(`http://localhost:8080/users/${id}`)
+      .delete(`https://fashionzonelink.onrender.com/users/${id}`)
       .then((res) => {
         toast.error("Delete User Successfully");
         window.location.reload();
