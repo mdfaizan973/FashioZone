@@ -111,10 +111,10 @@ export default function Womens() {
         </div>
         <div id="sort_con">
           <button className="sbutton" onClick={sort_asc}>
-            $ High To Low ⬇️
+            $ Low To High ⬆️
           </button>
           <button className="sbutton" onClick={sort_desc}>
-            $ Low To High ⬆️
+            $ High To Low ⬇️
           </button>
         </div>
       </div>
