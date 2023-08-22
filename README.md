@@ -44,7 +44,8 @@ Objective:
 
 # # ☆*: .｡. o(≧Home_Page≦)o .｡.:*☆ 👋
 
-![Screenshot (1494)](https://github.com/mdfaizan973/FashioZone/assets/106812942/a6928f13-a65b-4424-90db-14316334cc87)
+![Screenshot (1664)](https://github.com/mdfaizan973/FashioZone/assets/106812942/6b79b2f0-da86-4fcb-b4f7-8abe6439712e)
+
 
 # LogIn_Page
 
