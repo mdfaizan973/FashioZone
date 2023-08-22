@@ -97,7 +97,7 @@ export default function Mens() {
         />
       </div>
       <div id="img_ban">
-        <img src="https://olavi.in/cdn/shop/files/olavi_bnners_mens_1944x.jpg?v=1667538472" />
+        <img src="https://user-images.githubusercontent.com/106812942/262235431-2de34fd7-ac64-4f24-b1c3-cfb9bf22318c.png" />
       </div>
       <div id="functionalaties">
         <div id="filt_con">
