@@ -78,16 +78,17 @@
 #img_ban {
   width: 90%;
   margin: 10px auto;
-  height: 52vh;
+  height: 70vh;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   padding: 5px;
   border-radius: 15px;
+  overflow: hidden;
 }
 #img_ban img {
   width: 100%;
-  height: 50vh;
-  border-radius: 15px;
+  height: auto;
+  object-fit: cover;
 }
 #searchingcon {
   display: flex;

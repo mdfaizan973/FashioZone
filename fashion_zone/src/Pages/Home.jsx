@@ -13,7 +13,7 @@ export default function Home() {
 
       <div className="banner_img">
         <img
-          src="https://olavi.in/cdn/shop/files/2_240dd275-ca97-438b-8645-6fe8162a99cb_1944x.png?v=1681652675"
+          src="https://user-images.githubusercontent.com/106812942/262240177-346ff948-c5c3-4935-9c88-c925a2611809.jpg"
           alt="banner"
         />
       </div>
